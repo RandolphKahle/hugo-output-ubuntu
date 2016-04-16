@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on Resourceful Computing</title>
+    <link>http://docker.local:1313/categories/programming/</link>
+    <description>Recent content in Programming on Resourceful Computing</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 16 May 2015 12:00:00 -0700</lastBuildDate>
+    <atom:link href="http://docker.local:1313/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The Rust programming language</title>
+      <link>http://docker.local:1313/post/the-rust-programming-language/</link>
+      <pubDate>Sat, 16 May 2015 12:00:00 -0700</pubDate>
+      
+      <guid>http://docker.local:1313/post/the-rust-programming-language/</guid>
+      <description>&lt;p&gt;The &lt;a href=&#34;http://rust-lang.org&#34; title=&#34;Rust Language&#34;&gt;Rust programming language&lt;/a&gt;  has reached version 1.0.&lt;/p&gt;
+
+&lt;p&gt;I decided to spend some time learning and evaluating the Rust programming language from the perspective of resource orienting computing.
+Rust might seem like an unlikely candidate for ROC development because it designed to be a low level system programming language to compete with C and C++.
+I guess that is part of the intrigue for me - discovering if a modern, safe, fast programming language can serve as a foundation for the resource oriented computing approach.&lt;/p&gt;
+
+&lt;p&gt;If Rust is to serve as a ROC language it must be able to deal with resources as a general abstraction. And that&amp;rsquo;s where I&amp;rsquo;ll start - learning and experimenting with Rust as a way to model resources.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Kotlin and NetKernel</title>
+      <link>http://docker.local:1313/post/kotlin-and-netkernel/</link>
+      <pubDate>Fri, 14 Jun 2013 14:42:00 -0700</pubDate>
+      
+      <guid>http://docker.local:1313/post/kotlin-and-netkernel/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;This article was written more than three years before the pending release of Kotlin.
+The Kotlin language has evolved and I have removed the NetKernel modules from GitHub while
+I await the final release. I will provide a link to an updated post in the preface of this post
+when the dust settles. &amp;ndash; Randolph Kahle, February 12, 2016.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Kotlin is a new programming language from JetBrains, the publishers of IntelliJ
+and other development tools. Their goal is to make Kotlin an industrial strength
+replacement for Java.&lt;/p&gt;
+
+&lt;p&gt;I am intrigued because Kotlin has type safety, modern language features,
+very good IDE support, and can interoperate easily with existing Java programs and libraries.&lt;/p&gt;
+
+&lt;p&gt;To facilitate experimentation, I developed a NetKernel module &lt;code&gt;urn:org:netkernelroc:lang:kotlin&lt;/code&gt;
+and made it available on the NetKernelROC community Apposite repository.
+The current release (version 0.1.0 on June 14, 2013) includes Kotlin M5.2 (the 0.5.748 build).
+This is a Kotlin milestone release.
+While I have found the NetKernel code I&amp;rsquo;ve written with it to run just fine, you should probably
+consider this experimental.
+I will update the NetKernel module as Kotlin releases are published.
+Once you connect your NetKernel instance with the NetKernelROC Apposite repository you should be
+automatically notified of the updates.&lt;/p&gt;
+
+&lt;p&gt;The NetKernel Kotlin module is hosted on GitHub at
+&lt;a href=&#34;https://github.com/netkernelroc/urn.org.netkernelroc.lang.kotlin&#34;&gt;https://github.com/netkernelroc/urn.org.netkernelroc.lang.kotlin&lt;/a&gt;
+Currently the module contains Kotlin JAR files with language runtime support.
+My goal is to also include Kotlin code (in the form of classes and extension functions)
+to extend internal NetKernel code such as the NKF API and HDS to make programming easier
+than when using Java.
+If you are interested in working at this level, then you should fork and clone a copy of
+this module from GitHub and propose updates.
+You will find that I have written two Kotlin based HDS builders.
+The first is a Kotlin replacement for HDSBuilder (facilitated by the IntelliJ &amp;ldquo;convert Java code to Kotlin&amp;rdquo; service).
+The second simply wraps the NetKernel HDSBuilder and delegates to it.
+I wrote both because I&amp;rsquo;m not certain which will be the better approach.&lt;/p&gt;
+
+&lt;p&gt;My first experimentation with a NetKernel module that uses Kotlin can be found in the
+NetKernel module &lt;code&gt;urn:org:netkernelroc:util:file&lt;/code&gt;, also hosted on GitHub, at
+&lt;a href=&#34;https://github.com/netkernelroc/urn.org.netkernelroc.util.file&#34;&gt;https://github.com/netkernelroc/urn.org.netkernelroc.util.file&lt;/a&gt;.
+This module, also in a very early release, contains the service &lt;code&gt;active:fileList&lt;/code&gt;
+which returns a list of files in a specified directory.
+It uses the Kotlin replacement for HDSBuilder.
+If you look at the module &lt;code&gt;urn:org:netkernelroc:util:file:test&lt;/code&gt; you will find an experimental Kotlin DSL
+to facilitate the creation of XUnit testlist.xml resources.&lt;/p&gt;
+
+&lt;p&gt;My hope is that Kotlin will turn out to be a good language to standardize on for NetKernel system development.
+I experimented with Groovy, but found it frustrating (that&amp;rsquo;s another discussion).
+I wrote a Scala language module for NetKernel a while ago, but Scala programs seem too opaque.&lt;/p&gt;
+
+&lt;p&gt;I released this module on GitHub and through the NetKernelROC community to make it easy
+for anyone in the community to join me in exploring Kotlin.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>NetKernel request and execution threads</title>
+      <link>http://docker.local:1313/post/netkernel-request-and-execution-threads/</link>
+      <pubDate>Tue, 18 Sep 2012 05:04:00 -0700</pubDate>
+      
+      <guid>http://docker.local:1313/post/netkernel-request-and-execution-threads/</guid>
+      <description>&lt;p&gt;One aspect of NetKernel that confuses developers is the relationship between a request and a thread.&lt;/p&gt;
+
+&lt;p&gt;A request is a demand placed on a software system.
+A request could be triggered by a user interacting with the system,
+a Cron timer reaching a particular time, or another system in need of information.
+At the completion of request processing either the state of the system has changed,
+an information representation is returned, a request is made of another system, or some combination of these occurs.&lt;/p&gt;
+
+&lt;p&gt;A thread is an abstract execution context which is implemented by a real instruction counter and registers in a physical CPU core.
+The Java thread abstraction is simple and relatively straight forward to use.
+A program (or container) can set up a pool of threads which can be executed on one, two, or more physical CPU cores.
+Because a thread is an abstraction, the physical level execution can employ highly optimized techniques which remain invisible to the developer.&lt;/p&gt;
+
+&lt;p&gt;The thread abstraction has worked really well. As we have progressed from single core computers to two and four cores,
+developers have used a model of “processing a request on a thread” to build reasonably performant systems.
+Complexities arise, however, when writing code running on multiple threads that mutates state.
+Doug Lea’s early work and the later incorporation of this thinking into the Java concurrency libraries
+has made multi-threaded development and state mutation tenable.&lt;/p&gt;
+
+&lt;p&gt;For most developers, this is the “state of the art”.
+Some have used more advanced patterns to achieve very high concurrency and performance.
+There are also libraries, frameworks, etc. that support these more sophisticated patterns, such as Node.js.
+Also of note is Rich Hickey’s brilliant work with the data structures in Clojure.&lt;/p&gt;
+
+&lt;p&gt;NetKernel provides a much simpler abstraction.&lt;/p&gt;
+
+&lt;p&gt;In NetKernel the concept of a request and thread are completely separate.
+There is no notion of “processing a request on a thread”.
+Instead, a request (implemented as a Java object, which, with other associated objects,
+contains the complete processing context) is issued and the client waits for the requested information to be returned.
+While a thread actually does the processing of this request, that abstraction is hidden,
+just as the optimized physical execution of a thread is hidden from a Java developer.
+The following code show how a request is created:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;INKFRequest request = context.createRequest(&amp;quot;res:/helloworld.txt&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and this code tells the kernel that it should process the request:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;context.issueRequest(request);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice the method name – &lt;code&gt;issueRequest()&lt;/code&gt;.
+This is similar to typing in a URL into a browser and requesting information.
+In both cases there is no notion of a thread – this is just a request for information (in our case for the resource “&lt;code&gt;res:/helloworld.txt&lt;/code&gt;”).
+Of course these two methods calls must execute on a thread – it just doesn’t matter which thread. Requests processing and threads are completely orthogonal.&lt;/p&gt;
+
+&lt;p&gt;Compare this with traditional Java multi-thread coding.
+To create a new thread of execution, several things must happen: an instance of a Java object that
+implements the Runnable interface is created, the runnable is provided to a new Thread, and the thread is instructed to start:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Runnable runnable = new MyRunnableClass();
+Thread runner = new Thread(runnable);
+runner.start();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this model a thread is a visible abstraction – the exact opposite with NetKernel.
+In fact, threads and thread synchronization are primary and very necessary concerns for a developer.&lt;/p&gt;
+
+&lt;p&gt;What does this mean?&lt;/p&gt;
+
+&lt;p&gt;The implications of using the NetKernel Resource Oriented Computing abstraction are interesting to consider,
+especially as it relates to the emergence of 8-core, 16-core, 64-core, etc. computers and the importance of distributed computing.
+If a developer builds a system that uses ROC requests then the number and location of the threads that execute the work are not even visible.
+They are decoupled from the request processing code.
+This means that the size of worker thread pools, the number of cores, and whether they are local or remote,
+are not coding concerns – they are architectural and deployment / configuration decisions.
+And all of these decisions can be changed for an already built application independent of the code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Monitoring configuration changes in NetKernel transports</title>
+      <link>http://docker.local:1313/post/monitoring-configuration-changes-in-netkernel-transports/</link>
+      <pubDate>Wed, 20 Oct 2010 12:07:00 -0700</pubDate>
+      
+      <guid>http://docker.local:1313/post/monitoring-configuration-changes-in-netkernel-transports/</guid>
+      <description>&lt;p&gt;In NetKernel transport endpoints can monitor their configuration information enabling a user to
+dynamically change their settings while an application is running.&lt;/p&gt;
+
+&lt;p&gt;I will show an implementation pattern you can use within a transport that will provide this dynamic behavior.
+The key is understanding that a transport can request its configuration information as a resource request,
+retain a reference to the response and later check to see if that response has expired.
+The response will report that it has expired when the configuration information represented by the resource has been changed.&lt;/p&gt;
+
+&lt;p&gt;Since I am writing a transport for the new Twitter Stream API, I will use this as the example to illustrate the pattern.
+The Twitter Stream API is relatively new and allows you to set up a filtered stream of status messages
+(formatted in JSON or XML) that are sent directly from the Twitter servers.
+An example configuration change is the addition or removal of a Twitter ID
+from those being filtered or monitored.
+By implementing this pattern my transport will detect when the file containing the configuration
+changes and will cause the transport to reconnect to Twitter with the new filter information.&lt;/p&gt;
+
+&lt;p&gt;For the Twitter stream transport, the configuration is available from the resource identified as
+&lt;code&gt;res:/etc/system/TwitterStreamConfig.xml&lt;/code&gt;.
+he transport can request the configuration information represented as an HDS node with the following code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;String configURI = &amp;quot;res:/etc/system/TwitterStreamConfig.xml&amp;quot;;
+IHDSNode configuration = context.source(configURI, IHDSNode.class);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;However, we want to maintain a reference to the response returned by the request and therefore use this code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;IHDSNode configuration;
+INKFResponseReadOnly configurationResponse;
+String configURI = &amp;quot;res:/etc/system/TwitterStreamConfig.xml&amp;quot;;
+configurationResponse = context.sourceForResponse(configURI, IHDSNode.class);
+configuration = (IHDSNode)configurationResponse.getRepresentation();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Later, we can check to see if the response associated with the endpoint configuration is still valid with a call to &lt;code&gt;isExpired()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if (configurationResponse.isExpired())
+    {
+    // Re-request the configuration information
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The easiest way to set up periodic monitoring of the configuration response is to create a monitor thread,
+which can be done in the &lt;code&gt;postCommission(...)&lt;/code&gt; method.
+The corresponding &lt;code&gt;preDecommission(...)&lt;/code&gt; method would contain the code to interrupt and hence terminate the monitor thread.&lt;/p&gt;
+
+&lt;p&gt;In the following code I show the portion portion of the &lt;code&gt;TwitterStreamTransport&lt;/code&gt; class which provides the dynamic reconfigurability of the endpoint. (The part of the transport that deals with Twitter has not been included as that would obscure the illustration of this pattern.)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package net.databliss.netkernel.tpt.twitter;
+
+import org.netkernel.layer0.nkf.INKFRequestContext;
+import org.netkernel.layer0.nkf.INKFResponseReadOnly;
+import org.netkernel.layer0.representation.IHDSNode;
+import org.netkernel.module.standard.endpoint.StandardTransportImpl;
+
+public class TwitterStreamTransport extends StandardTransportImpl
+  {
+  private static final int POLL_INTERVAL = 10000; // ms
+
+  // Thread monitoring changes in configuration resources
+  private Thread monitorThread;
+
+  // The configurationResponse is the link to the cached configuration
+  // When the response expires then we must re-request the configuration
+  // using its identifier to get the updated information.
+  private INKFResponseReadOnly configurationResponse;
+
+  private volatile boolean pollConfiguration = true;
+
+  //==================== Override Superclass Methods ==================
+
+  @Override
+  protected void postCommission(INKFRequestContext inkfRequestContext) throws Exception
+    {
+    // Start the configuration monitoring thread
+    monitorThread = new ConfigurationPoll();
+    monitorThread.start();
+    }
+
+  @Override
+  protected void preDecommission(INKFRequestContext inkfRequestContext) throws Exception
+    {
+    // Stop the configuration monitor thread by interrupting it
+    pollConfiguration = false;
+    monitorThread.interrupt();
+    }
+
+  //==================== Private Implementation Methods ==================
+
+  private void checkConfig() throws Exception
+    {
+    if (configurationResponse == null || configurationResponse.isExpired())
+      {
+      // If the configuration has never been requested or if it has expired
+      // then we need to request it using the identifier is supplied by the
+      // config parameter.
+      INKFRequestContext context = this.getTransportContext();
+      configurationResponse = context.sourceForResponse(&amp;quot;param:config&amp;quot;, IHDSNode.class);
+      configure((IHDSNode) configurationResponse.getRepresentation());
+      }
+    }
+
+  private void configure(IHDSNode configuration)
+    {
+    // Code to configure the transport is included here.
+    }
+
+  private class ConfigurationPoll extends Thread
+    {
+    public void run()
+      {
+      while (pollConfiguration)
+        {
+        try { checkConfig(); } catch (Exception e) { e.printStackTrace(); }
+        try { sleep(POLL_INTERVAL); } catch (InterruptedException e) { } 
+        }
+      }
+    }
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If the response indicates that the configuration has expired, it does not mean that the configuration has new information.
+  For example, a user could edit the file and add some space characters, which would invalidate the response but would not change the configuration.
+  The private method &lt;code&gt;configure(...)&lt;/code&gt; should include a test to see if the configuration information is new before making changes to the state of the transport.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

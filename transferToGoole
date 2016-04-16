@@ -1,0 +1,47 @@
+#!/bin/bash
+#
+# File: transferToGoole
+#
+# Purpose:
+#   Script will create a new static web site using Hugo and push it to Google Cloud Storage
+#
+
+rm -fr public
+hugo 
+
+#gsutil -m rm -R gs://www.resourcefulcomputing.com/*
+gsutil -m rsync -R public/ gs://www.resourcefulcomputing.com/
+
+# Now we need to add some ACL code
+# Better is to make the bucket's default ACLl allow for public reading **
+#gsutil -m acl set -R -a public-read gs://www.resourcefulcomputing.com
+
+# Make sure we have very little caching time
+gsutil -m setmeta -h "Content-Type:text/html"                     -h "Cache-Control:public, max-age=600"   gs://www.resourcefulcomputing.com/**/*.html
+gsutil -m setmeta -h "Content-Type:image/svg+xml"                 -h "Cache-Control:public, max-age=600"   gs://www.resourcefulcomputing.com/**/*.svg
+gsutil -m setmeta -h "Content-Type:image/png"                     -h "Cache-Control:public, max-age=600"   gs://www.resourcefulcomputing.com/**/*.png
+gsutil -m setmeta -h "Content-Type:image/jpeg"                    -h "Cache-Control:public, max-age=600"   gs://www.resourcefulcomputing.com/**/*.jpg
+gsutil -m setmeta -h "Content-Type:image/jpeg"                    -h "Cache-Control:public, max-age=600"   gs://www.resourcefulcomputing.com/**/*.jpeg
+gsutil -m setmeta -h "Content-Type:image/gif"                     -h "Cache-Control:public, max-age=600"   gs://www.resourcefulcomputing.com/**/*.gif
+gsutil -m setmeta -h "Content-Type:text/css"                      -h "Cache-Control:public, max-age=600"   gs://www.resourcefulcomputing.com/**/*.css
+gsutil -m setmeta -h "Content-Type:application/javascript"        -h "Cache-Control:public, max-age=600"   gs://www.resourcefulcomputing.com/**/*.js
+gsutil -m setmeta -h "Content-Type:application/vnd.ms-fontobject" -h "Cache-Control:public, max-age=600"   gs://www.resourcefulcomputing.com/**/*.eot
+gsutil -m setmeta -h "Content-Type:application/x-font-ttf"        -h "Cache-Control:public, max-age=600"   gs://www.resourcefulcomputing.com/**/*.ttf
+gsutil -m setmeta -h "Content-Type:application/x-font-woff"       -h "Cache-Control:public, max-age=600"   gs://www.resourcefulcomputing.com/**/*.woff
+gsutil -m setmeta -h "Content-Type:application/x-font-woff"       -h "Cache-Control:public, max-age=600"   gs://www.resourcefulcomputing.com/**/*.woff2
+gsutil -m setmeta -h "Content-Type:application/x-font-otf"        -h "Cache-Control:public, max-age=600"   gs://www.resourcefulcomputing.com/**/*.otf
+
+
+#gsutil -m setmeta -h "Content-Type:text/html"                     -h "Cache-Control:public, max-age=86400"   -h "Expires:Sat, 31 Dec 2016 20:00:00 GMT" -h "Content-Disposition" gs://www.resourcefulcomputing.com/*.html
+#gsutil -m setmeta -h "Content-Type:image/svg+xml"                 -h "Cache-Control:public, max-age=86400"   -h "Expires:Sat, 31 Dec 2016 20:00:00 GMT" -h "Content-Disposition" gs://www.resourcefulcomputing.com/*.svg
+#gsutil -m setmeta -h "Content-Type:image/png"                     -h "Cache-Control:public, max-age=86400"   -h "Expires:Sat, 31 Dec 2016 20:00:00 GMT" -h "Content-Disposition" gs://www.resourcefulcomputing.com/*.png
+#gsutil -m setmeta -h "Content-Type:image/jpeg"                    -h "Cache-Control:public, max-age=86400"   -h "Expires:Sat, 31 Dec 2016 20:00:00 GMT" -h "Content-Disposition" gs://www.resourcefulcomputing.com/*.jpg
+#gsutil -m setmeta -h "Content-Type:image/jpeg"                    -h "Cache-Control:public, max-age=86400"   -h "Expires:Sat, 31 Dec 2016 20:00:00 GMT" -h "Content-Disposition" gs://www.resourcefulcomputing.com/*.jpeg
+#gsutil -m setmeta -h "Content-Type:image/gif"                     -h "Cache-Control:public, max-age=86400"   -h "Expires:Sat, 31 Dec 2016 20:00:00 GMT" -h "Content-Disposition" gs://www.resourcefulcomputing.com/*.gif
+#gsutil -m setmeta -h "Content-Type:text/css"                      -h "Cache-Control:public, max-age=86400"   -h "Expires:Sat, 31 Dec 2016 20:00:00 GMT" -h "Content-Disposition" gs://www.resourcefulcomputing.com/*.css
+#gsutil -m setmeta -h "Content-Type:application/javascript"        -h "Cache-Control:public, max-age=86400"   -h "Expires:Sat, 31 Dec 2016 20:00:00 GMT" -h "Content-Disposition" gs://www.resourcefulcomputing.com/*.js
+#gsutil -m setmeta -h "Content-Type:application/vnd.ms-fontobject" -h "Cache-Control:public, max-age=86400"   -h "Expires:Sat, 31 Dec 2016 20:00:00 GMT" -h "Content-Disposition" gs://www.resourcefulcomputing.com/*.eot
+#gsutil -m setmeta -h "Content-Type:application/x-font-ttf"        -h "Cache-Control:public, max-age=86400"   -h "Expires:Sat, 31 Dec 2016 20:00:00 GMT" -h "Content-Disposition" gs://www.resourcefulcomputing.com/*.ttf
+#gsutil -m setmeta -h "Content-Type:application/x-font-woff"       -h "Cache-Control:public, max-age=86400"   -h "Expires:Sat, 31 Dec 2016 20:00:00 GMT" -h "Content-Disposition" gs://www.resourcefulcomputing.com/*.woff
+#gsutil -m setmeta -h "Content-Type:application/x-font-woff"       -h "Cache-Control:public, max-age=86400"   -h "Expires:Sat, 31 Dec 2016 20:00:00 GMT" -h "Content-Disposition" gs://www.resourcefulcomputing.com/*.woff2
+#gsutil -m setmeta -h "Content-Type:application/x-font-otf"        -h "Cache-Control:public, max-age=86400"   -h "Expires:Sat, 31 Dec 2016 20:00:00 GMT" -h "Content-Disposition" gs://www.resourcefulcomputing.com/*.otf

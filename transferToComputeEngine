@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+# File: transferToComputeEngine
+#
+# Purpose:
+#   Script will create a new static web site using Hugo and push it to Google Compute Engine
+#
+
+rm -fr public
+hugo --baseURL="http://fast.resourcefulcomputing.com/"
+
+cd public
+gcloud compute copy-files . randolph.kahle@webserver-01:~/www/
+cd ..

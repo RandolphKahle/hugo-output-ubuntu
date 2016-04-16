@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Resourceful Computing</title>
+    <link>http://docker.local:1313/post/</link>
+    <description>Recent content in Posts on Resourceful Computing</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 14 Feb 2016 12:00:00 -0700</lastBuildDate>
+    <atom:link href="http://docker.local:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Getting Started with Google Cloud Platform</title>
+      <link>http://docker.local:1313/post/getting-started-with-google-cloud-platform/</link>
+      <pubDate>Sun, 14 Feb 2016 12:00:00 -0700</pubDate>
+      
+      <guid>http://docker.local:1313/post/getting-started-with-google-cloud-platform/</guid>
+      <description>&lt;p&gt;The Google Cloud Platform (GCP) is fast, capable, and secure.
+This post leads you through steps to create an account and
+then build a cloud-based virtual computer.&lt;/p&gt;
+
+&lt;p&gt;GCP is evolving quickly, including the web interface.
+I will avoid using screen shots and instead describe the required steps.
+If major changes occur, I will update this post to keep it current.&lt;/p&gt;
+
+&lt;p&gt;This version was tested and published on February 15, 2016.&lt;/p&gt;
+
+&lt;p&gt;To complete these steps you will need:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A browser - Chrome, Firefox, IE, or Safari should work.&lt;/li&gt;
+&lt;li&gt;An email account. Either a Gmail or non-Gmail account.&lt;/li&gt;
+&lt;li&gt;A phone number and a telephone. If you have a cell phone, you can elect to get a confirmation text message or a phone call to obtain a confirmation code. If you have a non-cell phone, you can elect to receive a phone call to obtain a confirmation code.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;create-a-google-account&#34;&gt;Create a Google Account&lt;/h1&gt;
+
+&lt;p&gt;To use the Google Cloud Platform you will need to create a GCP account using
+an email identity.
+You may use either a Gmail account or a non-Gmail email account.&lt;/p&gt;
+
+&lt;h3&gt;Account Creation Steps&lt;/h3&gt;
+
+&lt;p class=&#34;tablesteps&#34;&gt;To create a GCP account:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;strong&gt;Step&lt;/strong&gt;&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;strong&gt;Action&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;1&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;Go to the URL: &lt;a href=&#34;http://google.com&#34;&gt;http://google.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You  see the Google search page with the daily Doodle animated cartoon. Notice the blue
+button in the upper right hand corner with the label: &amp;quot;&lt;strong&gt;Sign In&lt;/strong&gt;&amp;quot;.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;2&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;Click on the blue button in the upper right corner of the browser with the label
+&lt;strong&gt;Sign In&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;You see a page with the title: &amp;quot;&lt;strong&gt;One account. All of Google.&lt;/strong&gt;&amp;quot;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;3&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;Instead of logging in, click the link with the text: &amp;quot;&lt;strong&gt;Create account&lt;/strong&gt;&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;You see a page with the title: &amp;quot;&lt;strong&gt;Create your Google Account&lt;/strong&gt;&amp;quot;.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;4&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;Fill in all of the fields on the account page. Note that you have a choice of using a
+GMail account or a non-Gmail account&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:deffd013f0739087590bc42ea07b87c9:1&#34;&gt;&lt;a class=&#34;footnote&#34; href=&#34;#fn:deffd013f0739087590bc42ea07b87c9:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;Click the option box with the text: &amp;quot;&lt;strong&gt;I agree to the Google Terms of Service and Privacy Policy&lt;/strong&gt;&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;Click the button with the label: &amp;quot;&lt;strong&gt;Next&lt;/strong&gt;&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;You see a page with the title &amp;quot;&lt;strong&gt;Verify your account&lt;/strong&gt;&amp;quot; which includes a confirmation of your phone number.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;5&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;Select either &amp;quot;&lt;strong&gt;Text message (SMS)&lt;/strong&gt;&amp;quot; or &amp;quot;&lt;strong&gt;Voice Call&lt;/strong&gt;&amp;quot; as the means to get a confirmation code.
+Click the button with the label: &amp;quot;&lt;strong&gt;Continue&lt;/strong&gt;&amp;quot;&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;You see a page with the title: &amp;quot;&lt;strong&gt;Verify your account&lt;/strong&gt;&amp;quot;.
+This page displays the email address to which Google has sent a verification link.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;6&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;Enter the code your received either as an SMS text message or from the phone call and
+click the button with the label &amp;quot;&lt;strong&gt;Continue&lt;/strong&gt;&amp;quot;s.&lt;/p&gt;
+
+&lt;p&gt;You see a page with the title: &amp;quot;&lt;strong&gt;Verify your email account&lt;/strong&gt;&amp;quot;.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;7&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;Check your email client for the message from Google which contains a URL link.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Click the link in the email message&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;You see a Google account login page with your
+email address above a password entry field&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:deffd013f0739087590bc42ea07b87c9:2&#34;&gt;&lt;a class=&#34;footnote&#34; href=&#34;#fn:deffd013f0739087590bc42ea07b87c9:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;8&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;Enter your password and click the button with the label: &amp;quot;&lt;strong&gt;Sign In&lt;/strong&gt;&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;You see a Google search page with your account information displayed in the upper right hand corner.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;You have created a Google account with your email address as the identity.
+Next you will use the Google Developer Console to create a Compute Engine instance.&lt;/p&gt;
+
+&lt;h1 id=&#34;create-a-google-compute-engine-instance&#34;&gt;Create a Google Compute Engine Instance&lt;/h1&gt;
+
+&lt;h3&gt;Compute Engine Creation Steps&lt;/h3&gt;
+
+&lt;p class=&#34;tablesteps&#34;&gt;To create a Google Compute Engine instance:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;strong&gt;Step&lt;/strong&gt;&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;strong&gt;Action&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;1&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;Go to the URL: &lt;a href=&#34;http://console.developer.google.com&#34;&gt;http://console.developer.google.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You  see the &lt;strong&gt;Google Developer Console&lt;/strong&gt; page.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;2&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;At the top of the &lt;strong&gt;Google Developer Console&lt;/strong&gt; page notice a blue bar. At the far left side of the
+bar, to the left of the text &amp;quot;&lt;em&gt;Google Developer Console&lt;/em&gt;&amp;quot; notice a graphic with three
+parallel white lines. This is the &lt;strong&gt;Gallery&lt;/strong&gt; button.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Click and release the Gallery Button&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You see a tray emerge from the left hand side of the browser with the products and
+services available in the Google Cloud Platform arranged in groups such as &amp;quot;&lt;em&gt;Compute&lt;/em&gt;&amp;quot;,
+&amp;quot;&lt;em&gt;Storage&lt;/em&gt;&amp;quot;, and &amp;quot;&lt;em&gt;Big Data&lt;/em&gt;&amp;quot;.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;3&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;Under the major section with the title &amp;quot;&lt;em&gt;Compute&lt;/em&gt;&amp;quot; notice &amp;quot;&lt;em&gt;Compute Engine&lt;/em&gt;&amp;quot;.
+&lt;strong&gt;Click on Compute Engine&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;You see a page displayed with the title &amp;quot;&lt;strong&gt;Create a project&lt;/strong&gt;&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;A project is the highest level management abstraction for GCP. All compute resources you
+create and use belong to a project. At a minimum a project has one owner&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:deffd013f0739087590bc42ea07b87c9:3&#34;&gt;&lt;a class=&#34;footnote&#34; href=&#34;#fn:deffd013f0739087590bc42ea07b87c9:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. The pages
+you see gives you the option to name your project. While you can choose any name your project
+must have a project identifier (project ID) that is unique within Google.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Type a name into the name field.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Notice that Google generates a project ID that is guaranteed to be unique and displays it
+underneath the name.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Answer the two questions by selection either yes or no.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Click the Create button&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You see a page with the title &amp;quot;&lt;strong&gt;Try Google Cloud Platform for free&lt;/strong&gt;&amp;quot;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;4&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;Google requires credit card or checking account information to create the account. You will
+start with a trial account balance of $300 which you can use over 60 days.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Fill in this form, including bank information and press the button with the label
+&amp;quot;Accept and start free trial&amp;quot;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;It will take a minute or two to set up your account.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;5&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;When Google has created the account you will see a sub-form appear with a button labeled
+&amp;quot;&lt;strong&gt;Create instance&lt;/strong&gt;&amp;quot; which is dimmed. When the project is set up and ready the button will
+change from dimmed to full color.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Press the button labeled &amp;quot;Create instance&amp;quot;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You see a new page with Compute Engine configuration options. With this page you can completely
+customize a virtual machine. Explore the various options and make changes if you if you see
+something that intrigues. Otherwise, leave everything as defaults.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Press the button labeled &amp;quot;Create&amp;quot;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You see a new page with an area to list all of your instances. When your instance is ready
+you see a green check mark to the left of the name.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;6&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;The instance listing displays the name, zone, and other information. At the far right hand
+side is a button with the label &amp;quot;&lt;strong&gt;SSH&lt;/strong&gt;&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Press the button labeled &amp;quot;SSH&amp;quot;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You see a new window appear that presents a terminal emulator that is connected to your
+virtual machine via an encrypted SSH connection. The command prompt allows you to work with
+the Debian Linux operating system (installed by default). Your user has &lt;code&gt;sudo&lt;/code&gt; rights so you
+can install new packages with the Debian APT package manager.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;6&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;When you are finished exploring your new virtual computer you may exit the session and the
+terminal window.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Type &amp;quot;exit&amp;quot; at the Linux prompt and press the RETURN key&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You see the window disappear. The computer is still running as show on the visiable web page.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;7&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;You are charged for the time the virtual machine is running. To stop it:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Click the seletion box on the far left side of the instance listing and then press
+either &amp;quot;Stop&amp;quot; or &amp;quot;Delete&amp;quot; at the top of the page.&lt;/strong&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;That is the end of this introduction.
+You have created a Google Cloud Platform account and created and experimented with a Compute Engine instance.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:deffd013f0739087590bc42ea07b87c9:1&#34;&gt;Google supports &lt;a href=&#34;https://en.wikipedia.org/wiki/Email_address#Sub-addressing&#34;&gt;plus-addressing&lt;/a&gt; which may be helpful if you anticipating having more than one account with Google.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:deffd013f0739087590bc42ea07b87c9:1&#34;&gt;↩&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:deffd013f0739087590bc42ea07b87c9:2&#34;&gt;If you have other accounts with Google this page may have one of those accounts displayed instead of your new account. If that is the case then click &lt;strong&gt;Sign in with a different account&lt;/strong&gt; and select the new account from the list.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:deffd013f0739087590bc42ea07b87c9:2&#34;&gt;↩&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:deffd013f0739087590bc42ea07b87c9:3&#34;&gt;Google recommends assigning at least two owners. Project may also have editors and viewers which can be users or even other projects.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:deffd013f0739087590bc42ea07b87c9:3&#34;&gt;↩&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Rust programming language</title>
+      <link>http://docker.local:1313/post/the-rust-programming-language/</link>
+      <pubDate>Sat, 16 May 2015 12:00:00 -0700</pubDate>
+      
+      <guid>http://docker.local:1313/post/the-rust-programming-language/</guid>
+      <description>&lt;p&gt;The &lt;a href=&#34;http://rust-lang.org&#34; title=&#34;Rust Language&#34;&gt;Rust programming language&lt;/a&gt;  has reached version 1.0.&lt;/p&gt;
+
+&lt;p&gt;I decided to spend some time learning and evaluating the Rust programming language from the perspective of resource orienting computing.
+Rust might seem like an unlikely candidate for ROC development because it designed to be a low level system programming language to compete with C and C++.
+I guess that is part of the intrigue for me - discovering if a modern, safe, fast programming language can serve as a foundation for the resource oriented computing approach.&lt;/p&gt;
+
+&lt;p&gt;If Rust is to serve as a ROC language it must be able to deal with resources as a general abstraction. And that&amp;rsquo;s where I&amp;rsquo;ll start - learning and experimenting with Rust as a way to model resources.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Kotlin and NetKernel</title>
+      <link>http://docker.local:1313/post/kotlin-and-netkernel/</link>
+      <pubDate>Fri, 14 Jun 2013 14:42:00 -0700</pubDate>
+      
+      <guid>http://docker.local:1313/post/kotlin-and-netkernel/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;This article was written more than three years before the pending release of Kotlin.
+The Kotlin language has evolved and I have removed the NetKernel modules from GitHub while
+I await the final release. I will provide a link to an updated post in the preface of this post
+when the dust settles. &amp;ndash; Randolph Kahle, February 12, 2016.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Kotlin is a new programming language from JetBrains, the publishers of IntelliJ
+and other development tools. Their goal is to make Kotlin an industrial strength
+replacement for Java.&lt;/p&gt;
+
+&lt;p&gt;I am intrigued because Kotlin has type safety, modern language features,
+very good IDE support, and can interoperate easily with existing Java programs and libraries.&lt;/p&gt;
+
+&lt;p&gt;To facilitate experimentation, I developed a NetKernel module &lt;code&gt;urn:org:netkernelroc:lang:kotlin&lt;/code&gt;
+and made it available on the NetKernelROC community Apposite repository.
+The current release (version 0.1.0 on June 14, 2013) includes Kotlin M5.2 (the 0.5.748 build).
+This is a Kotlin milestone release.
+While I have found the NetKernel code I&amp;rsquo;ve written with it to run just fine, you should probably
+consider this experimental.
+I will update the NetKernel module as Kotlin releases are published.
+Once you connect your NetKernel instance with the NetKernelROC Apposite repository you should be
+automatically notified of the updates.&lt;/p&gt;
+
+&lt;p&gt;The NetKernel Kotlin module is hosted on GitHub at
+&lt;a href=&#34;https://github.com/netkernelroc/urn.org.netkernelroc.lang.kotlin&#34;&gt;https://github.com/netkernelroc/urn.org.netkernelroc.lang.kotlin&lt;/a&gt;
+Currently the module contains Kotlin JAR files with language runtime support.
+My goal is to also include Kotlin code (in the form of classes and extension functions)
+to extend internal NetKernel code such as the NKF API and HDS to make programming easier
+than when using Java.
+If you are interested in working at this level, then you should fork and clone a copy of
+this module from GitHub and propose updates.
+You will find that I have written two Kotlin based HDS builders.
+The first is a Kotlin replacement for HDSBuilder (facilitated by the IntelliJ &amp;ldquo;convert Java code to Kotlin&amp;rdquo; service).
+The second simply wraps the NetKernel HDSBuilder and delegates to it.
+I wrote both because I&amp;rsquo;m not certain which will be the better approach.&lt;/p&gt;
+
+&lt;p&gt;My first experimentation with a NetKernel module that uses Kotlin can be found in the
+NetKernel module &lt;code&gt;urn:org:netkernelroc:util:file&lt;/code&gt;, also hosted on GitHub, at
+&lt;a href=&#34;https://github.com/netkernelroc/urn.org.netkernelroc.util.file&#34;&gt;https://github.com/netkernelroc/urn.org.netkernelroc.util.file&lt;/a&gt;.
+This module, also in a very early release, contains the service &lt;code&gt;active:fileList&lt;/code&gt;
+which returns a list of files in a specified directory.
+It uses the Kotlin replacement for HDSBuilder.
+If you look at the module &lt;code&gt;urn:org:netkernelroc:util:file:test&lt;/code&gt; you will find an experimental Kotlin DSL
+to facilitate the creation of XUnit testlist.xml resources.&lt;/p&gt;
+
+&lt;p&gt;My hope is that Kotlin will turn out to be a good language to standardize on for NetKernel system development.
+I experimented with Groovy, but found it frustrating (that&amp;rsquo;s another discussion).
+I wrote a Scala language module for NetKernel a while ago, but Scala programs seem too opaque.&lt;/p&gt;
+
+&lt;p&gt;I released this module on GitHub and through the NetKernelROC community to make it easy
+for anyone in the community to join me in exploring Kotlin.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>NetKernel request and execution threads</title>
+      <link>http://docker.local:1313/post/netkernel-request-and-execution-threads/</link>
+      <pubDate>Tue, 18 Sep 2012 05:04:00 -0700</pubDate>
+      
+      <guid>http://docker.local:1313/post/netkernel-request-and-execution-threads/</guid>
+      <description>&lt;p&gt;One aspect of NetKernel that confuses developers is the relationship between a request and a thread.&lt;/p&gt;
+
+&lt;p&gt;A request is a demand placed on a software system.
+A request could be triggered by a user interacting with the system,
+a Cron timer reaching a particular time, or another system in need of information.
+At the completion of request processing either the state of the system has changed,
+an information representation is returned, a request is made of another system, or some combination of these occurs.&lt;/p&gt;
+
+&lt;p&gt;A thread is an abstract execution context which is implemented by a real instruction counter and registers in a physical CPU core.
+The Java thread abstraction is simple and relatively straight forward to use.
+A program (or container) can set up a pool of threads which can be executed on one, two, or more physical CPU cores.
+Because a thread is an abstraction, the physical level execution can employ highly optimized techniques which remain invisible to the developer.&lt;/p&gt;
+
+&lt;p&gt;The thread abstraction has worked really well. As we have progressed from single core computers to two and four cores,
+developers have used a model of “processing a request on a thread” to build reasonably performant systems.
+Complexities arise, however, when writing code running on multiple threads that mutates state.
+Doug Lea’s early work and the later incorporation of this thinking into the Java concurrency libraries
+has made multi-threaded development and state mutation tenable.&lt;/p&gt;
+
+&lt;p&gt;For most developers, this is the “state of the art”.
+Some have used more advanced patterns to achieve very high concurrency and performance.
+There are also libraries, frameworks, etc. that support these more sophisticated patterns, such as Node.js.
+Also of note is Rich Hickey’s brilliant work with the data structures in Clojure.&lt;/p&gt;
+
+&lt;p&gt;NetKernel provides a much simpler abstraction.&lt;/p&gt;
+
+&lt;p&gt;In NetKernel the concept of a request and thread are completely separate.
+There is no notion of “processing a request on a thread”.
+Instead, a request (implemented as a Java object, which, with other associated objects,
+contains the complete processing context) is issued and the client waits for the requested information to be returned.
+While a thread actually does the processing of this request, that abstraction is hidden,
+just as the optimized physical execution of a thread is hidden from a Java developer.
+The following code show how a request is created:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;INKFRequest request = context.createRequest(&amp;quot;res:/helloworld.txt&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and this code tells the kernel that it should process the request:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;context.issueRequest(request);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice the method name – &lt;code&gt;issueRequest()&lt;/code&gt;.
+This is similar to typing in a URL into a browser and requesting information.
+In both cases there is no notion of a thread – this is just a request for information (in our case for the resource “&lt;code&gt;res:/helloworld.txt&lt;/code&gt;”).
+Of course these two methods calls must execute on a thread – it just doesn’t matter which thread. Requests processing and threads are completely orthogonal.&lt;/p&gt;
+
+&lt;p&gt;Compare this with traditional Java multi-thread coding.
+To create a new thread of execution, several things must happen: an instance of a Java object that
+implements the Runnable interface is created, the runnable is provided to a new Thread, and the thread is instructed to start:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Runnable runnable = new MyRunnableClass();
+Thread runner = new Thread(runnable);
+runner.start();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this model a thread is a visible abstraction – the exact opposite with NetKernel.
+In fact, threads and thread synchronization are primary and very necessary concerns for a developer.&lt;/p&gt;
+
+&lt;p&gt;What does this mean?&lt;/p&gt;
+
+&lt;p&gt;The implications of using the NetKernel Resource Oriented Computing abstraction are interesting to consider,
+especially as it relates to the emergence of 8-core, 16-core, 64-core, etc. computers and the importance of distributed computing.
+If a developer builds a system that uses ROC requests then the number and location of the threads that execute the work are not even visible.
+They are decoupled from the request processing code.
+This means that the size of worker thread pools, the number of cores, and whether they are local or remote,
+are not coding concerns – they are architectural and deployment / configuration decisions.
+And all of these decisions can be changed for an already built application independent of the code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>What language should we use to talk about ROC?</title>
+      <link>http://docker.local:1313/post/what-language-should-we-use-to-talk-about-roc/</link>
+      <pubDate>Sat, 01 Sep 2012 07:29:00 -0700</pubDate>
+      
+      <guid>http://docker.local:1313/post/what-language-should-we-use-to-talk-about-roc/</guid>
+      <description>&lt;p&gt;Humans thrive on communication and we have invented many different forms.
+For example – music, dance, written communication which includes novels, poetry, short stories, essays, blogs, etc., as well as visual forms such as paintings.
+For particular domains, such as mathematics, we have developed symbolic languages that allows us to succinctly express our ideas.
+In the field of information systems we have different ways of expressing ourselves from the highest altitude view to executable code.&lt;/p&gt;
+
+&lt;p&gt;Resource Oriented Computing is an approach to conceive and implement information systems.
+It is natural to start with a familiar language to discuss the abstraction and then extend the language when required.
+In the eight years I have been working with Resource Oriented Computing I have wrestled with this language.
+It is frustrating because the concepts behind ROC are very simple and yet, we do not have an agreed upon set of words or notational system.
+I now think that the ROC community needs a new language.&lt;/p&gt;
+
+&lt;p&gt;I realize that the language we use helps us articulate out thoughts and shapes our thinking by facilitating and constraining.
+A language facilitates thought by making available words or symbols that have an agreed upon meaning and which allow us to easily note what we want to communicate.
+If that language lacks words or symbols for a particular new thought,
+then it constrains us and it forces us to either extend the language or take more time to build a line of reasoning.&lt;/p&gt;
+
+&lt;p&gt;Which languages have we tried? I have used pictures with address spaces (that look like clouds),
+endpoints (that look like rounded rectangles), and requests (that look like arcs).
+These symbols were first designed by Peter Rodgers for the NetKernel documentation.
+In conversations with Peter he has shown me a more mathematical and symbolic way to describe ROC.
+Tom Hicks has shared his ideas about a Lisp-like notation.
+I have experimented with a DSL to extend the Groovy programming language.
+The NetKernel explorer tool uses a graphical rendering.
+The NetKernel nCode composition tool presents a graphical view of endpoints and relationships but ignores address spaces.
+And finally, to create a running NetKernel system, one uses a text editor to create an XML document.&lt;/p&gt;
+
+&lt;p&gt;My final complaint about our current state is that no language supports a discussion about information flow through a NetKernel system.
+All of the languages are about the composition of spaces, endpoints, and request / response processing.
+What actually happens in a NetKernel system is that information flows through the ROC architecture.
+Isn’t that the whole point of an information system? If so, why is that not the primary focus of a language?&lt;/p&gt;
+
+&lt;p&gt;I leave this as a challenge to the NetKernel / ROC community.
+Let us create a new language for ROC.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Monitoring configuration changes in NetKernel transports</title>
+      <link>http://docker.local:1313/post/monitoring-configuration-changes-in-netkernel-transports/</link>
+      <pubDate>Wed, 20 Oct 2010 12:07:00 -0700</pubDate>
+      
+      <guid>http://docker.local:1313/post/monitoring-configuration-changes-in-netkernel-transports/</guid>
+      <description>&lt;p&gt;In NetKernel transport endpoints can monitor their configuration information enabling a user to
+dynamically change their settings while an application is running.&lt;/p&gt;
+
+&lt;p&gt;I will show an implementation pattern you can use within a transport that will provide this dynamic behavior.
+The key is understanding that a transport can request its configuration information as a resource request,
+retain a reference to the response and later check to see if that response has expired.
+The response will report that it has expired when the configuration information represented by the resource has been changed.&lt;/p&gt;
+
+&lt;p&gt;Since I am writing a transport for the new Twitter Stream API, I will use this as the example to illustrate the pattern.
+The Twitter Stream API is relatively new and allows you to set up a filtered stream of status messages
+(formatted in JSON or XML) that are sent directly from the Twitter servers.
+An example configuration change is the addition or removal of a Twitter ID
+from those being filtered or monitored.
+By implementing this pattern my transport will detect when the file containing the configuration
+changes and will cause the transport to reconnect to Twitter with the new filter information.&lt;/p&gt;
+
+&lt;p&gt;For the Twitter stream transport, the configuration is available from the resource identified as
+&lt;code&gt;res:/etc/system/TwitterStreamConfig.xml&lt;/code&gt;.
+he transport can request the configuration information represented as an HDS node with the following code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;String configURI = &amp;quot;res:/etc/system/TwitterStreamConfig.xml&amp;quot;;
+IHDSNode configuration = context.source(configURI, IHDSNode.class);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;However, we want to maintain a reference to the response returned by the request and therefore use this code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;IHDSNode configuration;
+INKFResponseReadOnly configurationResponse;
+String configURI = &amp;quot;res:/etc/system/TwitterStreamConfig.xml&amp;quot;;
+configurationResponse = context.sourceForResponse(configURI, IHDSNode.class);
+configuration = (IHDSNode)configurationResponse.getRepresentation();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Later, we can check to see if the response associated with the endpoint configuration is still valid with a call to &lt;code&gt;isExpired()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if (configurationResponse.isExpired())
+    {
+    // Re-request the configuration information
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The easiest way to set up periodic monitoring of the configuration response is to create a monitor thread,
+which can be done in the &lt;code&gt;postCommission(...)&lt;/code&gt; method.
+The corresponding &lt;code&gt;preDecommission(...)&lt;/code&gt; method would contain the code to interrupt and hence terminate the monitor thread.&lt;/p&gt;
+
+&lt;p&gt;In the following code I show the portion portion of the &lt;code&gt;TwitterStreamTransport&lt;/code&gt; class which provides the dynamic reconfigurability of the endpoint. (The part of the transport that deals with Twitter has not been included as that would obscure the illustration of this pattern.)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package net.databliss.netkernel.tpt.twitter;
+
+import org.netkernel.layer0.nkf.INKFRequestContext;
+import org.netkernel.layer0.nkf.INKFResponseReadOnly;
+import org.netkernel.layer0.representation.IHDSNode;
+import org.netkernel.module.standard.endpoint.StandardTransportImpl;
+
+public class TwitterStreamTransport extends StandardTransportImpl
+  {
+  private static final int POLL_INTERVAL = 10000; // ms
+
+  // Thread monitoring changes in configuration resources
+  private Thread monitorThread;
+
+  // The configurationResponse is the link to the cached configuration
+  // When the response expires then we must re-request the configuration
+  // using its identifier to get the updated information.
+  private INKFResponseReadOnly configurationResponse;
+
+  private volatile boolean pollConfiguration = true;
+
+  //==================== Override Superclass Methods ==================
+
+  @Override
+  protected void postCommission(INKFRequestContext inkfRequestContext) throws Exception
+    {
+    // Start the configuration monitoring thread
+    monitorThread = new ConfigurationPoll();
+    monitorThread.start();
+    }
+
+  @Override
+  protected void preDecommission(INKFRequestContext inkfRequestContext) throws Exception
+    {
+    // Stop the configuration monitor thread by interrupting it
+    pollConfiguration = false;
+    monitorThread.interrupt();
+    }
+
+  //==================== Private Implementation Methods ==================
+
+  private void checkConfig() throws Exception
+    {
+    if (configurationResponse == null || configurationResponse.isExpired())
+      {
+      // If the configuration has never been requested or if it has expired
+      // then we need to request it using the identifier is supplied by the
+      // config parameter.
+      INKFRequestContext context = this.getTransportContext();
+      configurationResponse = context.sourceForResponse(&amp;quot;param:config&amp;quot;, IHDSNode.class);
+      configure((IHDSNode) configurationResponse.getRepresentation());
+      }
+    }
+
+  private void configure(IHDSNode configuration)
+    {
+    // Code to configure the transport is included here.
+    }
+
+  private class ConfigurationPoll extends Thread
+    {
+    public void run()
+      {
+      while (pollConfiguration)
+        {
+        try { checkConfig(); } catch (Exception e) { e.printStackTrace(); }
+        try { sleep(POLL_INTERVAL); } catch (InterruptedException e) { } 
+        }
+      }
+    }
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If the response indicates that the configuration has expired, it does not mean that the configuration has new information.
+  For example, a user could edit the file and add some space characters, which would invalidate the response but would not change the configuration.
+  The private method &lt;code&gt;configure(...)&lt;/code&gt; should include a test to see if the configuration information is new before making changes to the state of the transport.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Resourceful Computing</title>
+      <link>http://docker.local:1313/post/resourceful-computing/</link>
+      <pubDate>Sat, 20 Mar 2010 02:48:00 -0700</pubDate>
+      
+      <guid>http://docker.local:1313/post/resourceful-computing/</guid>
+      <description>&lt;p&gt;I don&amp;rsquo;t enjoy complexity.&lt;/p&gt;
+
+&lt;p&gt;This blog will be an exploration of resource oriented computing with a
+particular focus on its ability to reduce complexity in software systems.&lt;/p&gt;
+
+&lt;p&gt;While this will be a record of a journey of exploration, I do welcome comments and feedback.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s see where this leads&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

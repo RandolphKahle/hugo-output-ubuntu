@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://docker.local:1313/</loc>
+    <lastmod>2016-02-14T12:00:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://docker.local:1313/post/getting-started-with-google-cloud-platform/</loc>
+    <lastmod>2016-02-14T12:00:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docker.local:1313/post/the-rust-programming-language/</loc>
+    <lastmod>2015-05-16T12:00:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docker.local:1313/post/kotlin-and-netkernel/</loc>
+    <lastmod>2013-06-14T14:42:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docker.local:1313/post/netkernel-request-and-execution-threads/</loc>
+    <lastmod>2012-09-18T05:04:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docker.local:1313/post/what-language-should-we-use-to-talk-about-roc/</loc>
+    <lastmod>2012-09-01T07:29:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docker.local:1313/post/monitoring-configuration-changes-in-netkernel-transports/</loc>
+    <lastmod>2010-10-20T12:07:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docker.local:1313/post/resourceful-computing/</loc>
+    <lastmod>2010-03-20T02:48:00-07:00</lastmod>
+  </url>
+  
+</urlset>

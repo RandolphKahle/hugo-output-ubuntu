@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>NetKernel request and execution threads &middot; Resourceful Computing</title>
+    <meta name="generator" content="Hugo 0.15" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="map[url:http://www.randolphkahle.info nickName:Randy Kahle avatar:images/randolphkahle/randy_headshot_square.jpg bio:Architect - Mentor - Trainer - Consultant location:Fort Collins, CO site_description:Guide to Resourceful Computing copyright:Copyright Databliss, LLC 2016 Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice). name:Randolph Kahle honorificSuffix:MBA author:Randolph Kahle]">
+    
+      <meta name="description" content="An exploration of the difference between physical and logical concurrent request processing">
+    
+    
+    <link rel="icon" href="http://docker.local:1313/favicon.ico">
+    <link rel="apple-touch-icon" href="http://docker.local:1313/apple-touch-icon.png" />
+    <link rel="stylesheet" href="http://docker.local:1313/css/style.css">
+    <link rel="stylesheet" href="http://docker.local:1313/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://docker.local:1313/css/monokai.css">
+    <link rel="stylesheet" href="http://docker.local:1313/fancybox/jquery.fancybox.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="NetKernel request and execution threads" />
+<meta property="og:description" content="An exploration of the difference between physical and logical concurrent request processing" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://docker.local:1313/post/netkernel-request-and-execution-threads/" />
+
+
+<meta property="og:updated_time" content="2012-09-18T05:04:00-07:00"/>
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta itemprop="name" content="NetKernel request and execution threads">
+<meta itemprop="description" content="An exploration of the difference between physical and logical concurrent request processing">
+
+
+<meta itemprop="dateModified" content="2012-09-18T05:04:00-07:00" />
+<meta itemprop="wordCount" content="681">
+
+
+
+<meta itemprop="keywords" content="cloud,complexity,programming,google,introduction,kotlin,language,netkernel,rust," />
+
+    
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:title" content="NetKernel request and execution threads"/>
+<meta name="twitter:description" content="An exploration of the difference between physical and logical concurrent request processing"/>
+<meta name="twitter:site" content="@datablissr"/>
+
+
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="http://docker.local:1313/" id="logo"><i class="logo" style="background-image: url('http://docker.local:1313/css/images/logo.png')"></i><span class="site-title">Resourceful Computing</span></a>
+      <nav id="main-nav">
+          
+
+          
+
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="http://docker.local:1313/"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" results="0" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="q" value="site:http://docker.local:1313/">
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+
+          
+
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" results="0" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="q" value="site:http://docker.local:1313/">
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+	    <aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      <img id="avatar" src="http://docker.local:1313/">
+      <h2 id="name">map[author:Randolph Kahle bio:Architect - Mentor - Trainer - Consultant location:Fort Collins, CO site_description:Guide to Resourceful Computing copyright:Copyright Databliss, LLC 2016 Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice). name:Randolph Kahle honorificSuffix:MBA avatar:images/randolphkahle/randy_headshot_square.jpg url:http://www.randolphkahle.info nickName:Randy Kahle]</h2>
+      
+      
+      
+          <a id="follow" href="https://github.com/resourcefulcomputing">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        7
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          6
+          
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="contact-info profile-block">
+      <table class="contact-list">
+        <tr>
+          
+<td><a href="//github.com/resourcefulcomputing" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//twitter.com/datablissr" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
+
+
+          <td><a href="" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+	    <section id="main">
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+        <div class="article-inner">
+            
+                
+                <img src="http://docker.local:1313/images/netkernel/netkernel-logo-256x256.png" class="article-banner">
+                
+            
+
+            <header class="article-header">
+    <a href="http://docker.local:1313/post/netkernel-request-and-execution-threads/">
+    <h1 class="article-title" itemprop="name">
+        NetKernel request and execution threads
+    </h1>
+    </a>
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2012-09-18 05:04:00 -0700 -0700" itemprop="datePublished">2012-09-18</time>
+            &middot;
+            681
+            words
+            &middot;
+            4
+            minute read
+        </div>
+
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                <a class="article-category-link" href="http://docker.local:1313/categories/programming">programming</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                <a class="article-category-link" href="http://docker.local:1313/tags/netkernel">netkernel</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+            <div class="article-entry" itemprop="articleBody">
+                <p>One aspect of NetKernel that confuses developers is the relationship between a request and a thread.</p>
+
+<p>A request is a demand placed on a software system.
+A request could be triggered by a user interacting with the system,
+a Cron timer reaching a particular time, or another system in need of information.
+At the completion of request processing either the state of the system has changed,
+an information representation is returned, a request is made of another system, or some combination of these occurs.</p>
+
+<p>A thread is an abstract execution context which is implemented by a real instruction counter and registers in a physical CPU core.
+The Java thread abstraction is simple and relatively straight forward to use.
+A program (or container) can set up a pool of threads which can be executed on one, two, or more physical CPU cores.
+Because a thread is an abstraction, the physical level execution can employ highly optimized techniques which remain invisible to the developer.</p>
+
+<p>The thread abstraction has worked really well. As we have progressed from single core computers to two and four cores,
+developers have used a model of “processing a request on a thread” to build reasonably performant systems.
+Complexities arise, however, when writing code running on multiple threads that mutates state.
+Doug Lea’s early work and the later incorporation of this thinking into the Java concurrency libraries
+has made multi-threaded development and state mutation tenable.</p>
+
+<p>For most developers, this is the “state of the art”.
+Some have used more advanced patterns to achieve very high concurrency and performance.
+There are also libraries, frameworks, etc. that support these more sophisticated patterns, such as Node.js.
+Also of note is Rich Hickey’s brilliant work with the data structures in Clojure.</p>
+
+<p>NetKernel provides a much simpler abstraction.</p>
+
+<p>In NetKernel the concept of a request and thread are completely separate.
+There is no notion of “processing a request on a thread”.
+Instead, a request (implemented as a Java object, which, with other associated objects,
+contains the complete processing context) is issued and the client waits for the requested information to be returned.
+While a thread actually does the processing of this request, that abstraction is hidden,
+just as the optimized physical execution of a thread is hidden from a Java developer.
+The following code show how a request is created:</p>
+
+<pre><code>INKFRequest request = context.createRequest(&quot;res:/helloworld.txt&quot;);
+</code></pre>
+
+<p>and this code tells the kernel that it should process the request:</p>
+
+<pre><code>context.issueRequest(request);
+</code></pre>
+
+<p>Notice the method name – <code>issueRequest()</code>.
+This is similar to typing in a URL into a browser and requesting information.
+In both cases there is no notion of a thread – this is just a request for information (in our case for the resource “<code>res:/helloworld.txt</code>”).
+Of course these two methods calls must execute on a thread – it just doesn’t matter which thread. Requests processing and threads are completely orthogonal.</p>
+
+<p>Compare this with traditional Java multi-thread coding.
+To create a new thread of execution, several things must happen: an instance of a Java object that
+implements the Runnable interface is created, the runnable is provided to a new Thread, and the thread is instructed to start:</p>
+
+<pre><code>Runnable runnable = new MyRunnableClass();
+Thread runner = new Thread(runnable);
+runner.start();
+</code></pre>
+
+<p>In this model a thread is a visible abstraction – the exact opposite with NetKernel.
+In fact, threads and thread synchronization are primary and very necessary concerns for a developer.</p>
+
+<p>What does this mean?</p>
+
+<p>The implications of using the NetKernel Resource Oriented Computing abstraction are interesting to consider,
+especially as it relates to the emergence of 8-core, 16-core, 64-core, etc. computers and the importance of distributed computing.
+If a developer builds a system that uses ROC requests then the number and location of the threads that execute the work are not even visible.
+They are decoupled from the request processing code.
+This means that the size of worker thread pools, the number of cores, and whether they are local or remote,
+are not coding concerns – they are architectural and deployment / configuration decisions.
+And all of these decisions can be changed for an already built application independent of the code.</p>
+
+            </div>
+            <footer class="article-footer">
+    <a data-url="http://docker.local:1313/post/netkernel-request-and-execution-threads/" data-id="43cec65c74a17b88d6fdbc5fbb6e4dce" class="article-share-link">
+        Share
+    </a>
+    
+</footer>
+
+        </div>
+
+        
+<nav id="article-nav">
+    
+    <a href="http://docker.local:1313/post/what-language-should-we-use-to-talk-about-roc/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">What language should we use to talk about ROC?</div>
+    </a>
+    
+
+    
+    <a href="http://docker.local:1313/post/kotlin-and-netkernel/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">Kotlin and NetKernel</div>
+    </a>
+    
+</nav>
+
+
+    </article>
+    <section id="comments">
+        <div id="disqus_thread">
+            
+        </div>
+    </section>
+
+</section>
+
+	    <aside id="sidebar">
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Recents
+    </h3>
+    <div class="widget">
+        <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://docker.local:1313/post/getting-started-with-google-cloud-platform/" class="thumbnail">
+                    
+                        
+                        <span style="background-image:url(http://docker.local:1313/images/google/google-cloud.svg)" alt="NetKernel request and execution threads" class="thumbnail-image"></span>
+                        
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-category">
+                        <a class="article-category-link" href="http://docker.local:1313/categories/cloud">
+                        cloud
+                        </a>
+                    </p>
+                    
+                    <p class="item-title"><a href="http://docker.local:1313/post/getting-started-with-google-cloud-platform/" class="title">Getting Started with Google Cloud Platform</a></p>
+                    <p class="item-date">
+                        <time datetime="2016-02-14 12:00:00 -0700 -0700" itemprop="datePublished">2016-02-14</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://docker.local:1313/post/the-rust-programming-language/" class="thumbnail">
+                    
+                        
+                        <span style="background-image:url(http://docker.local:1313/images/rust/rust-logo-blk-400x400.png)" alt="NetKernel request and execution threads" class="thumbnail-image"></span>
+                        
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-category">
+                        <a class="article-category-link" href="http://docker.local:1313/categories/programming">
+                        programming
+                        </a>
+                    </p>
+                    
+                    <p class="item-title"><a href="http://docker.local:1313/post/the-rust-programming-language/" class="title">The Rust programming language</a></p>
+                    <p class="item-date">
+                        <time datetime="2015-05-16 12:00:00 -0700 -0700" itemprop="datePublished">2015-05-16</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://docker.local:1313/post/kotlin-and-netkernel/" class="thumbnail">
+                    
+                        
+                        <span style="background-image:url(http://docker.local:1313/images/kotlin/kotlin-logo-200x200.png)" alt="NetKernel request and execution threads" class="thumbnail-image"></span>
+                        
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-category">
+                        <a class="article-category-link" href="http://docker.local:1313/categories/programming">
+                        programming
+                        </a>
+                    </p>
+                    
+                    <p class="item-title"><a href="http://docker.local:1313/post/kotlin-and-netkernel/" class="title">Kotlin and NetKernel</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-06-14 14:42:00 -0700 -0700" itemprop="datePublished">2013-06-14</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://docker.local:1313/post/netkernel-request-and-execution-threads/" class="thumbnail">
+                    
+                        
+                        <span style="background-image:url(http://docker.local:1313/images/netkernel/netkernel-logo-256x256.png)" alt="NetKernel request and execution threads" class="thumbnail-image"></span>
+                        
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-category">
+                        <a class="article-category-link" href="http://docker.local:1313/categories/programming">
+                        programming
+                        </a>
+                    </p>
+                    
+                    <p class="item-title"><a href="http://docker.local:1313/post/netkernel-request-and-execution-threads/" class="title">NetKernel request and execution threads</a></p>
+                    <p class="item-date">
+                        <time datetime="2012-09-18 05:04:00 -0700 -0700" itemprop="datePublished">2012-09-18</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://docker.local:1313/post/what-language-should-we-use-to-talk-about-roc/" class="thumbnail">
+                    
+                        
+                        <span style="background-image:url(http://docker.local:1313/images/cloud-100x100.png)" alt="NetKernel request and execution threads" class="thumbnail-image"></span>
+                        
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-category">
+                        <a class="article-category-link" href="http://docker.local:1313/categories/complexity">
+                        complexity
+                        </a>
+                    </p>
+                    
+                    <p class="item-title"><a href="http://docker.local:1313/post/what-language-should-we-use-to-talk-about-roc/" class="title">What language should we use to talk about ROC?</a></p>
+                    <p class="item-date">
+                        <time datetime="2012-09-01 07:29:00 -0700 -0700" itemprop="datePublished">2012-09-01</time>
+                    </p>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/categories/cloud">
+                    cloud
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/categories/complexity">
+                    complexity
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/categories/programming">
+                    programming
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/google">
+                    google
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/introduction">
+                    introduction
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/kotlin">
+                    kotlin
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/language">
+                    language
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/netkernel">
+                    netkernel
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/rust">
+                    rust
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tag cloud
+    </h3>
+    <div class="widget tagcloud">
+        
+        <a href="http://docker.local:1313/tags/google" style="font-size: 12px;">google</a>
+        
+        <a href="http://docker.local:1313/tags/introduction" style="font-size: 12px;">introduction</a>
+        
+        <a href="http://docker.local:1313/tags/kotlin" style="font-size: 12px;">kotlin</a>
+        
+        <a href="http://docker.local:1313/tags/language" style="font-size: 12px;">language</a>
+        
+        <a href="http://docker.local:1313/tags/netkernel" style="font-size: 12px;">netkernel</a>
+        
+        <a href="http://docker.local:1313/tags/rust" style="font-size: 12px;">rust</a>
+        
+    </div>
+</div>
+
+
+
+
+    <div id="toTop" class="fa fa-chevron-up"></div>
+</aside>
+
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016
+      
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://docker.local:1313/fancybox/jquery.fancybox.pack.js"></script>
+<script src="http://docker.local:1313/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<!-- MathJax -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script data-no-instant>document.write('<script src="/livereload.js?mindelay=10"></' + 'script>')</script></body>
+</html>

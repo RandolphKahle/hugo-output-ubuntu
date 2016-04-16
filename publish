@@ -1,0 +1,37 @@
+#!/bin/bash
+#
+# File: publish
+#
+# Purpose:
+#   Transfer a publication release of the website to www.resourcefulcomputing.com
+#
+# Prerequisite:
+#   The target storage bucket must have the default object ACL set to all public access
+#
+
+# Clean up the output target before running the generation step
+rm -fr public
+
+# Set the target URL for the test website
+hugo --baseURL="http://www.resourcefulcomputing.com/"
+
+# Synchronize the target bucket with the generated website
+gsutil -m rsync -R -d public/ gs://www.resourcefulcomputing.com/
+
+# Set ACL for all objects to allow public reading
+gsutil -m acl ch -u AllUsers:R gs://www.resourcefulcomputing.com/**/*
+
+# Set content types and ensure no caching so we can easily test with browsers
+gsutil -m setmeta -h "Content-Type:text/html"               -h "Cache-Control:public, max-age=3600"    gs://www.resourcefulcomputing.com/**/*.html
+gsutil -m setmeta -h "Content-Type:image/svg+xml"           -h "Cache-Control:public, max-age=3600"    gs://www.resourcefulcomputing.com/**/*.svg
+gsutil -m setmeta -h "Content-Type:image/png"               -h "Cache-Control:public, max-age=3600"    gs://www.resourcefulcomputing.com/**/*.png
+gsutil -m setmeta -h "Content-Type:image/jpeg"              -h "Cache-Control:public, max-age=3600"    gs://www.resourcefulcomputing.com/**/*.jpeg
+gsutil -m setmeta -h "Content-Type:image/jpeg"              -h "Cache-Control:public, max-age=3600"    gs://www.resourcefulcomputing.com/**/*.jpeg
+gsutil -m setmeta -h "Content-Type:image/jpeg"              -h "Cache-Control:public, max-age=3600"    gs://www.resourcefulcomputing.com/**/*.jpeg
+gsutil -m setmeta -h "Content-Type:text/css"                -h "Cache-Control:public, max-age=3600"    gs://www.resourcefulcomputing.com/**/*.css
+gsutil -m setmeta -h "Content-Type:application/javascript"  -h "Cache-Control:public, max-age=3600"    gs://www.resourcefulcomputing.com/**/*.js
+gsutil -m setmeta -h "Content-Type:application/javascript"  -h "Cache-Control:public, max-age=3600"    gs://www.resourcefulcomputing.com/**/*.eot
+gsutil -m setmeta -h "Content-Type:application/x-font-ttf"  -h "Cache-Control:public, max-age=3600"    gs://www.resourcefulcomputing.com/**/*.ttf
+gsutil -m setmeta -h "Content-Type:application/x-font-woff" -h "Cache-Control:public, max-age=3600"    gs://www.resourcefulcomputing.com/**/*.woff
+gsutil -m setmeta -h "Content-Type:application/x-font-woff" -h "Cache-Control:public, max-age=3600"    gs://www.resourcefulcomputing.com/**/*.woff2
+gsutil -m setmeta -h "Content-Type:application/x-font-otf"  -h "Cache-Control:public, max-age=3600"    gs://www.resourcefulcomputing.com/**/*.otf

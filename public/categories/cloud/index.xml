@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud on Resourceful Computing</title>
+    <link>http://docker.local:1313/categories/cloud/</link>
+    <description>Recent content in Cloud on Resourceful Computing</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 14 Feb 2016 12:00:00 -0700</lastBuildDate>
+    <atom:link href="http://docker.local:1313/categories/cloud/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Getting Started with Google Cloud Platform</title>
+      <link>http://docker.local:1313/post/getting-started-with-google-cloud-platform/</link>
+      <pubDate>Sun, 14 Feb 2016 12:00:00 -0700</pubDate>
+      
+      <guid>http://docker.local:1313/post/getting-started-with-google-cloud-platform/</guid>
+      <description>&lt;p&gt;The Google Cloud Platform (GCP) is fast, capable, and secure.
+This post leads you through steps to create an account and
+then build a cloud-based virtual computer.&lt;/p&gt;
+
+&lt;p&gt;GCP is evolving quickly, including the web interface.
+I will avoid using screen shots and instead describe the required steps.
+If major changes occur, I will update this post to keep it current.&lt;/p&gt;
+
+&lt;p&gt;This version was tested and published on February 15, 2016.&lt;/p&gt;
+
+&lt;p&gt;To complete these steps you will need:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A browser - Chrome, Firefox, IE, or Safari should work.&lt;/li&gt;
+&lt;li&gt;An email account. Either a Gmail or non-Gmail account.&lt;/li&gt;
+&lt;li&gt;A phone number and a telephone. If you have a cell phone, you can elect to get a confirmation text message or a phone call to obtain a confirmation code. If you have a non-cell phone, you can elect to receive a phone call to obtain a confirmation code.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;create-a-google-account&#34;&gt;Create a Google Account&lt;/h1&gt;
+
+&lt;p&gt;To use the Google Cloud Platform you will need to create a GCP account using
+an email identity.
+You may use either a Gmail account or a non-Gmail email account.&lt;/p&gt;
+
+&lt;h3&gt;Account Creation Steps&lt;/h3&gt;
+
+&lt;p class=&#34;tablesteps&#34;&gt;To create a GCP account:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;strong&gt;Step&lt;/strong&gt;&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;strong&gt;Action&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;1&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;Go to the URL: &lt;a href=&#34;http://google.com&#34;&gt;http://google.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You  see the Google search page with the daily Doodle animated cartoon. Notice the blue
+button in the upper right hand corner with the label: &amp;quot;&lt;strong&gt;Sign In&lt;/strong&gt;&amp;quot;.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;2&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;Click on the blue button in the upper right corner of the browser with the label
+&lt;strong&gt;Sign In&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;You see a page with the title: &amp;quot;&lt;strong&gt;One account. All of Google.&lt;/strong&gt;&amp;quot;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;3&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;Instead of logging in, click the link with the text: &amp;quot;&lt;strong&gt;Create account&lt;/strong&gt;&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;You see a page with the title: &amp;quot;&lt;strong&gt;Create your Google Account&lt;/strong&gt;&amp;quot;.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;4&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;Fill in all of the fields on the account page. Note that you have a choice of using a
+GMail account or a non-Gmail account&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:deffd013f0739087590bc42ea07b87c9:1&#34;&gt;&lt;a class=&#34;footnote&#34; href=&#34;#fn:deffd013f0739087590bc42ea07b87c9:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;Click the option box with the text: &amp;quot;&lt;strong&gt;I agree to the Google Terms of Service and Privacy Policy&lt;/strong&gt;&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;Click the button with the label: &amp;quot;&lt;strong&gt;Next&lt;/strong&gt;&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;You see a page with the title &amp;quot;&lt;strong&gt;Verify your account&lt;/strong&gt;&amp;quot; which includes a confirmation of your phone number.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;5&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;Select either &amp;quot;&lt;strong&gt;Text message (SMS)&lt;/strong&gt;&amp;quot; or &amp;quot;&lt;strong&gt;Voice Call&lt;/strong&gt;&amp;quot; as the means to get a confirmation code.
+Click the button with the label: &amp;quot;&lt;strong&gt;Continue&lt;/strong&gt;&amp;quot;&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;You see a page with the title: &amp;quot;&lt;strong&gt;Verify your account&lt;/strong&gt;&amp;quot;.
+This page displays the email address to which Google has sent a verification link.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;6&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;Enter the code your received either as an SMS text message or from the phone call and
+click the button with the label &amp;quot;&lt;strong&gt;Continue&lt;/strong&gt;&amp;quot;s.&lt;/p&gt;
+
+&lt;p&gt;You see a page with the title: &amp;quot;&lt;strong&gt;Verify your email account&lt;/strong&gt;&amp;quot;.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;7&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;Check your email client for the message from Google which contains a URL link.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Click the link in the email message&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;You see a Google account login page with your
+email address above a password entry field&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:deffd013f0739087590bc42ea07b87c9:2&#34;&gt;&lt;a class=&#34;footnote&#34; href=&#34;#fn:deffd013f0739087590bc42ea07b87c9:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;8&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;Enter your password and click the button with the label: &amp;quot;&lt;strong&gt;Sign In&lt;/strong&gt;&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;You see a Google search page with your account information displayed in the upper right hand corner.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;You have created a Google account with your email address as the identity.
+Next you will use the Google Developer Console to create a Compute Engine instance.&lt;/p&gt;
+
+&lt;h1 id=&#34;create-a-google-compute-engine-instance&#34;&gt;Create a Google Compute Engine Instance&lt;/h1&gt;
+
+&lt;h3&gt;Compute Engine Creation Steps&lt;/h3&gt;
+
+&lt;p class=&#34;tablesteps&#34;&gt;To create a Google Compute Engine instance:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;strong&gt;Step&lt;/strong&gt;&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;strong&gt;Action&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;1&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;Go to the URL: &lt;a href=&#34;http://console.developer.google.com&#34;&gt;http://console.developer.google.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You  see the &lt;strong&gt;Google Developer Console&lt;/strong&gt; page.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;2&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;At the top of the &lt;strong&gt;Google Developer Console&lt;/strong&gt; page notice a blue bar. At the far left side of the
+bar, to the left of the text &amp;quot;&lt;em&gt;Google Developer Console&lt;/em&gt;&amp;quot; notice a graphic with three
+parallel white lines. This is the &lt;strong&gt;Gallery&lt;/strong&gt; button.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Click and release the Gallery Button&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You see a tray emerge from the left hand side of the browser with the products and
+services available in the Google Cloud Platform arranged in groups such as &amp;quot;&lt;em&gt;Compute&lt;/em&gt;&amp;quot;,
+&amp;quot;&lt;em&gt;Storage&lt;/em&gt;&amp;quot;, and &amp;quot;&lt;em&gt;Big Data&lt;/em&gt;&amp;quot;.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;3&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;Under the major section with the title &amp;quot;&lt;em&gt;Compute&lt;/em&gt;&amp;quot; notice &amp;quot;&lt;em&gt;Compute Engine&lt;/em&gt;&amp;quot;.
+&lt;strong&gt;Click on Compute Engine&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;You see a page displayed with the title &amp;quot;&lt;strong&gt;Create a project&lt;/strong&gt;&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;A project is the highest level management abstraction for GCP. All compute resources you
+create and use belong to a project. At a minimum a project has one owner&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:deffd013f0739087590bc42ea07b87c9:3&#34;&gt;&lt;a class=&#34;footnote&#34; href=&#34;#fn:deffd013f0739087590bc42ea07b87c9:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. The pages
+you see gives you the option to name your project. While you can choose any name your project
+must have a project identifier (project ID) that is unique within Google.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Type a name into the name field.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Notice that Google generates a project ID that is guaranteed to be unique and displays it
+underneath the name.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Answer the two questions by selection either yes or no.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Click the Create button&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You see a page with the title &amp;quot;&lt;strong&gt;Try Google Cloud Platform for free&lt;/strong&gt;&amp;quot;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;4&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;Google requires credit card or checking account information to create the account. You will
+start with a trial account balance of $300 which you can use over 60 days.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Fill in this form, including bank information and press the button with the label
+&amp;quot;Accept and start free trial&amp;quot;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;It will take a minute or two to set up your account.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;5&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;When Google has created the account you will see a sub-form appear with a button labeled
+&amp;quot;&lt;strong&gt;Create instance&lt;/strong&gt;&amp;quot; which is dimmed. When the project is set up and ready the button will
+change from dimmed to full color.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Press the button labeled &amp;quot;Create instance&amp;quot;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You see a new page with Compute Engine configuration options. With this page you can completely
+customize a virtual machine. Explore the various options and make changes if you if you see
+something that intrigues. Otherwise, leave everything as defaults.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Press the button labeled &amp;quot;Create&amp;quot;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You see a new page with an area to list all of your instances. When your instance is ready
+you see a green check mark to the left of the name.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;6&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;The instance listing displays the name, zone, and other information. At the far right hand
+side is a button with the label &amp;quot;&lt;strong&gt;SSH&lt;/strong&gt;&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Press the button labeled &amp;quot;SSH&amp;quot;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You see a new window appear that presents a terminal emulator that is connected to your
+virtual machine via an encrypted SSH connection. The command prompt allows you to work with
+the Debian Linux operating system (installed by default). Your user has &lt;code&gt;sudo&lt;/code&gt; rights so you
+can install new packages with the Debian APT package manager.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;6&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;When you are finished exploring your new virtual computer you may exit the session and the
+terminal window.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Type &amp;quot;exit&amp;quot; at the Linux prompt and press the RETURN key&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You see the window disappear. The computer is still running as show on the visiable web page.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;7&lt;/p&gt;
+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;p&gt;You are charged for the time the virtual machine is running. To stop it:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Click the seletion box on the far left side of the instance listing and then press
+either &amp;quot;Stop&amp;quot; or &amp;quot;Delete&amp;quot; at the top of the page.&lt;/strong&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;That is the end of this introduction.
+You have created a Google Cloud Platform account and created and experimented with a Compute Engine instance.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:deffd013f0739087590bc42ea07b87c9:1&#34;&gt;Google supports &lt;a href=&#34;https://en.wikipedia.org/wiki/Email_address#Sub-addressing&#34;&gt;plus-addressing&lt;/a&gt; which may be helpful if you anticipating having more than one account with Google.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:deffd013f0739087590bc42ea07b87c9:1&#34;&gt;↩&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:deffd013f0739087590bc42ea07b87c9:2&#34;&gt;If you have other accounts with Google this page may have one of those accounts displayed instead of your new account. If that is the case then click &lt;strong&gt;Sign in with a different account&lt;/strong&gt; and select the new account from the list.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:deffd013f0739087590bc42ea07b87c9:2&#34;&gt;↩&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:deffd013f0739087590bc42ea07b87c9:3&#34;&gt;Google recommends assigning at least two owners. Project may also have editors and viewers which can be users or even other projects.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:deffd013f0739087590bc42ea07b87c9:3&#34;&gt;↩&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

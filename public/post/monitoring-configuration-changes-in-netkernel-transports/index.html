@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Monitoring configuration changes in NetKernel transports &middot; Resourceful Computing</title>
+    <meta name="generator" content="Hugo 0.15" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="map[url:http://www.randolphkahle.info nickName:Randy Kahle avatar:images/randolphkahle/randy_headshot_square.jpg bio:Architect - Mentor - Trainer - Consultant location:Fort Collins, CO site_description:Guide to Resourceful Computing copyright:Copyright Databliss, LLC 2016 Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice). name:Randolph Kahle honorificSuffix:MBA author:Randolph Kahle]">
+    
+      <meta name="description" content="Understand how to create a dependency check in a NetKernel transport">
+    
+    
+    <link rel="icon" href="http://docker.local:1313/favicon.ico">
+    <link rel="apple-touch-icon" href="http://docker.local:1313/apple-touch-icon.png" />
+    <link rel="stylesheet" href="http://docker.local:1313/css/style.css">
+    <link rel="stylesheet" href="http://docker.local:1313/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://docker.local:1313/css/monokai.css">
+    <link rel="stylesheet" href="http://docker.local:1313/fancybox/jquery.fancybox.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="Monitoring configuration changes in NetKernel transports" />
+<meta property="og:description" content="Understand how to create a dependency check in a NetKernel transport" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://docker.local:1313/post/monitoring-configuration-changes-in-netkernel-transports/" />
+
+
+<meta property="og:updated_time" content="2010-10-20T12:07:00-07:00"/>
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta itemprop="name" content="Monitoring configuration changes in NetKernel transports">
+<meta itemprop="description" content="Understand how to create a dependency check in a NetKernel transport">
+
+
+<meta itemprop="dateModified" content="2010-10-20T12:07:00-07:00" />
+<meta itemprop="wordCount" content="684">
+
+
+
+<meta itemprop="keywords" content="cloud,complexity,programming,google,introduction,kotlin,language,netkernel,rust," />
+
+    
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:title" content="Monitoring configuration changes in NetKernel transports"/>
+<meta name="twitter:description" content="Understand how to create a dependency check in a NetKernel transport"/>
+<meta name="twitter:site" content="@datablissr"/>
+
+
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="http://docker.local:1313/" id="logo"><i class="logo" style="background-image: url('http://docker.local:1313/css/images/logo.png')"></i><span class="site-title">Resourceful Computing</span></a>
+      <nav id="main-nav">
+          
+
+          
+
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="http://docker.local:1313/"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" results="0" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="q" value="site:http://docker.local:1313/">
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+
+          
+
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" results="0" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="q" value="site:http://docker.local:1313/">
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+	    <aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      <img id="avatar" src="http://docker.local:1313/">
+      <h2 id="name">map[name:Randolph Kahle honorificSuffix:MBA author:Randolph Kahle bio:Architect - Mentor - Trainer - Consultant location:Fort Collins, CO site_description:Guide to Resourceful Computing copyright:Copyright Databliss, LLC 2016 Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice). url:http://www.randolphkahle.info nickName:Randy Kahle avatar:images/randolphkahle/randy_headshot_square.jpg]</h2>
+      
+      
+      
+          <a id="follow" href="https://github.com/resourcefulcomputing">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        7
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          6
+          
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="contact-info profile-block">
+      <table class="contact-list">
+        <tr>
+          
+<td><a href="//github.com/resourcefulcomputing" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//twitter.com/datablissr" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
+
+
+          <td><a href="" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+	    <section id="main">
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+        <div class="article-inner">
+            
+                
+                <img src="http://docker.local:1313/images/netkernel/netkernel-logo-256x256.png" class="article-banner">
+                
+            
+
+            <header class="article-header">
+    <a href="http://docker.local:1313/post/monitoring-configuration-changes-in-netkernel-transports/">
+    <h1 class="article-title" itemprop="name">
+        Monitoring configuration changes in NetKernel transports
+    </h1>
+    </a>
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2010-10-20 12:07:00 -0700 -0700" itemprop="datePublished">2010-10-20</time>
+            &middot;
+            684
+            words
+            &middot;
+            4
+            minute read
+        </div>
+
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                <a class="article-category-link" href="http://docker.local:1313/categories/programming">programming</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                <a class="article-category-link" href="http://docker.local:1313/tags/netkernel">netkernel</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+            <div class="article-entry" itemprop="articleBody">
+                <p>In NetKernel transport endpoints can monitor their configuration information enabling a user to
+dynamically change their settings while an application is running.</p>
+
+<p>I will show an implementation pattern you can use within a transport that will provide this dynamic behavior.
+The key is understanding that a transport can request its configuration information as a resource request,
+retain a reference to the response and later check to see if that response has expired.
+The response will report that it has expired when the configuration information represented by the resource has been changed.</p>
+
+<p>Since I am writing a transport for the new Twitter Stream API, I will use this as the example to illustrate the pattern.
+The Twitter Stream API is relatively new and allows you to set up a filtered stream of status messages
+(formatted in JSON or XML) that are sent directly from the Twitter servers.
+An example configuration change is the addition or removal of a Twitter ID
+from those being filtered or monitored.
+By implementing this pattern my transport will detect when the file containing the configuration
+changes and will cause the transport to reconnect to Twitter with the new filter information.</p>
+
+<p>For the Twitter stream transport, the configuration is available from the resource identified as
+<code>res:/etc/system/TwitterStreamConfig.xml</code>.
+he transport can request the configuration information represented as an HDS node with the following code:</p>
+
+<pre><code>String configURI = &quot;res:/etc/system/TwitterStreamConfig.xml&quot;;
+IHDSNode configuration = context.source(configURI, IHDSNode.class);
+</code></pre>
+
+<p>However, we want to maintain a reference to the response returned by the request and therefore use this code:</p>
+
+<pre><code>IHDSNode configuration;
+INKFResponseReadOnly configurationResponse;
+String configURI = &quot;res:/etc/system/TwitterStreamConfig.xml&quot;;
+configurationResponse = context.sourceForResponse(configURI, IHDSNode.class);
+configuration = (IHDSNode)configurationResponse.getRepresentation();
+</code></pre>
+
+<p>Later, we can check to see if the response associated with the endpoint configuration is still valid with a call to <code>isExpired()</code>:</p>
+
+<pre><code>if (configurationResponse.isExpired())
+    {
+    // Re-request the configuration information
+    }
+</code></pre>
+
+<p>The easiest way to set up periodic monitoring of the configuration response is to create a monitor thread,
+which can be done in the <code>postCommission(...)</code> method.
+The corresponding <code>preDecommission(...)</code> method would contain the code to interrupt and hence terminate the monitor thread.</p>
+
+<p>In the following code I show the portion portion of the <code>TwitterStreamTransport</code> class which provides the dynamic reconfigurability of the endpoint. (The part of the transport that deals with Twitter has not been included as that would obscure the illustration of this pattern.)</p>
+
+<pre><code>package net.databliss.netkernel.tpt.twitter;
+
+import org.netkernel.layer0.nkf.INKFRequestContext;
+import org.netkernel.layer0.nkf.INKFResponseReadOnly;
+import org.netkernel.layer0.representation.IHDSNode;
+import org.netkernel.module.standard.endpoint.StandardTransportImpl;
+
+public class TwitterStreamTransport extends StandardTransportImpl
+  {
+  private static final int POLL_INTERVAL = 10000; // ms
+
+  // Thread monitoring changes in configuration resources
+  private Thread monitorThread;
+
+  // The configurationResponse is the link to the cached configuration
+  // When the response expires then we must re-request the configuration
+  // using its identifier to get the updated information.
+  private INKFResponseReadOnly configurationResponse;
+
+  private volatile boolean pollConfiguration = true;
+
+  //==================== Override Superclass Methods ==================
+
+  @Override
+  protected void postCommission(INKFRequestContext inkfRequestContext) throws Exception
+    {
+    // Start the configuration monitoring thread
+    monitorThread = new ConfigurationPoll();
+    monitorThread.start();
+    }
+
+  @Override
+  protected void preDecommission(INKFRequestContext inkfRequestContext) throws Exception
+    {
+    // Stop the configuration monitor thread by interrupting it
+    pollConfiguration = false;
+    monitorThread.interrupt();
+    }
+
+  //==================== Private Implementation Methods ==================
+
+  private void checkConfig() throws Exception
+    {
+    if (configurationResponse == null || configurationResponse.isExpired())
+      {
+      // If the configuration has never been requested or if it has expired
+      // then we need to request it using the identifier is supplied by the
+      // config parameter.
+      INKFRequestContext context = this.getTransportContext();
+      configurationResponse = context.sourceForResponse(&quot;param:config&quot;, IHDSNode.class);
+      configure((IHDSNode) configurationResponse.getRepresentation());
+      }
+    }
+
+  private void configure(IHDSNode configuration)
+    {
+    // Code to configure the transport is included here.
+    }
+
+  private class ConfigurationPoll extends Thread
+    {
+    public void run()
+      {
+      while (pollConfiguration)
+        {
+        try { checkConfig(); } catch (Exception e) { e.printStackTrace(); }
+        try { sleep(POLL_INTERVAL); } catch (InterruptedException e) { } 
+        }
+      }
+    }
+  }
+</code></pre>
+
+<p>If the response indicates that the configuration has expired, it does not mean that the configuration has new information.
+  For example, a user could edit the file and add some space characters, which would invalidate the response but would not change the configuration.
+  The private method <code>configure(...)</code> should include a test to see if the configuration information is new before making changes to the state of the transport.</p>
+
+            </div>
+            <footer class="article-footer">
+    <a data-url="http://docker.local:1313/post/monitoring-configuration-changes-in-netkernel-transports/" data-id="53a96de74a7f3fe2fa7a415c91dd9da9" class="article-share-link">
+        Share
+    </a>
+    
+</footer>
+
+        </div>
+
+        
+<nav id="article-nav">
+    
+    <a href="http://docker.local:1313/post/resourceful-computing/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">Resourceful Computing</div>
+    </a>
+    
+
+    
+    <a href="http://docker.local:1313/post/what-language-should-we-use-to-talk-about-roc/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">What language should we use to talk about ROC?</div>
+    </a>
+    
+</nav>
+
+
+    </article>
+    <section id="comments">
+        <div id="disqus_thread">
+            
+        </div>
+    </section>
+
+</section>
+
+	    <aside id="sidebar">
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Recents
+    </h3>
+    <div class="widget">
+        <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://docker.local:1313/post/getting-started-with-google-cloud-platform/" class="thumbnail">
+                    
+                        
+                        <span style="background-image:url(http://docker.local:1313/images/google/google-cloud.svg)" alt="Monitoring configuration changes in NetKernel transports" class="thumbnail-image"></span>
+                        
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-category">
+                        <a class="article-category-link" href="http://docker.local:1313/categories/cloud">
+                        cloud
+                        </a>
+                    </p>
+                    
+                    <p class="item-title"><a href="http://docker.local:1313/post/getting-started-with-google-cloud-platform/" class="title">Getting Started with Google Cloud Platform</a></p>
+                    <p class="item-date">
+                        <time datetime="2016-02-14 12:00:00 -0700 -0700" itemprop="datePublished">2016-02-14</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://docker.local:1313/post/the-rust-programming-language/" class="thumbnail">
+                    
+                        
+                        <span style="background-image:url(http://docker.local:1313/images/rust/rust-logo-blk-400x400.png)" alt="Monitoring configuration changes in NetKernel transports" class="thumbnail-image"></span>
+                        
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-category">
+                        <a class="article-category-link" href="http://docker.local:1313/categories/programming">
+                        programming
+                        </a>
+                    </p>
+                    
+                    <p class="item-title"><a href="http://docker.local:1313/post/the-rust-programming-language/" class="title">The Rust programming language</a></p>
+                    <p class="item-date">
+                        <time datetime="2015-05-16 12:00:00 -0700 -0700" itemprop="datePublished">2015-05-16</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://docker.local:1313/post/kotlin-and-netkernel/" class="thumbnail">
+                    
+                        
+                        <span style="background-image:url(http://docker.local:1313/images/kotlin/kotlin-logo-200x200.png)" alt="Monitoring configuration changes in NetKernel transports" class="thumbnail-image"></span>
+                        
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-category">
+                        <a class="article-category-link" href="http://docker.local:1313/categories/programming">
+                        programming
+                        </a>
+                    </p>
+                    
+                    <p class="item-title"><a href="http://docker.local:1313/post/kotlin-and-netkernel/" class="title">Kotlin and NetKernel</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-06-14 14:42:00 -0700 -0700" itemprop="datePublished">2013-06-14</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://docker.local:1313/post/netkernel-request-and-execution-threads/" class="thumbnail">
+                    
+                        
+                        <span style="background-image:url(http://docker.local:1313/images/netkernel/netkernel-logo-256x256.png)" alt="Monitoring configuration changes in NetKernel transports" class="thumbnail-image"></span>
+                        
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-category">
+                        <a class="article-category-link" href="http://docker.local:1313/categories/programming">
+                        programming
+                        </a>
+                    </p>
+                    
+                    <p class="item-title"><a href="http://docker.local:1313/post/netkernel-request-and-execution-threads/" class="title">NetKernel request and execution threads</a></p>
+                    <p class="item-date">
+                        <time datetime="2012-09-18 05:04:00 -0700 -0700" itemprop="datePublished">2012-09-18</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://docker.local:1313/post/what-language-should-we-use-to-talk-about-roc/" class="thumbnail">
+                    
+                        
+                        <span style="background-image:url(http://docker.local:1313/images/cloud-100x100.png)" alt="Monitoring configuration changes in NetKernel transports" class="thumbnail-image"></span>
+                        
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-category">
+                        <a class="article-category-link" href="http://docker.local:1313/categories/complexity">
+                        complexity
+                        </a>
+                    </p>
+                    
+                    <p class="item-title"><a href="http://docker.local:1313/post/what-language-should-we-use-to-talk-about-roc/" class="title">What language should we use to talk about ROC?</a></p>
+                    <p class="item-date">
+                        <time datetime="2012-09-01 07:29:00 -0700 -0700" itemprop="datePublished">2012-09-01</time>
+                    </p>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/categories/cloud">
+                    cloud
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/categories/complexity">
+                    complexity
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/categories/programming">
+                    programming
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/google">
+                    google
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/introduction">
+                    introduction
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/kotlin">
+                    kotlin
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/language">
+                    language
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/netkernel">
+                    netkernel
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/rust">
+                    rust
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tag cloud
+    </h3>
+    <div class="widget tagcloud">
+        
+        <a href="http://docker.local:1313/tags/google" style="font-size: 12px;">google</a>
+        
+        <a href="http://docker.local:1313/tags/introduction" style="font-size: 12px;">introduction</a>
+        
+        <a href="http://docker.local:1313/tags/kotlin" style="font-size: 12px;">kotlin</a>
+        
+        <a href="http://docker.local:1313/tags/language" style="font-size: 12px;">language</a>
+        
+        <a href="http://docker.local:1313/tags/netkernel" style="font-size: 12px;">netkernel</a>
+        
+        <a href="http://docker.local:1313/tags/rust" style="font-size: 12px;">rust</a>
+        
+    </div>
+</div>
+
+
+
+
+    <div id="toTop" class="fa fa-chevron-up"></div>
+</aside>
+
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016
+      
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://docker.local:1313/fancybox/jquery.fancybox.pack.js"></script>
+<script src="http://docker.local:1313/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<!-- MathJax -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script data-no-instant>document.write('<script src="/livereload.js?mindelay=10"></' + 'script>')</script></body>
+</html>

@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Getting Started with Google Cloud Platform &middot; Resourceful Computing</title>
+    <meta name="generator" content="Hugo 0.15" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="map[bio:Architect - Mentor - Trainer - Consultant location:Fort Collins, CO site_description:Guide to Resourceful Computing copyright:Copyright Databliss, LLC 2016 Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice). name:Randolph Kahle honorificSuffix:MBA author:Randolph Kahle url:http://www.randolphkahle.info nickName:Randy Kahle avatar:images/randolphkahle/randy_headshot_square.jpg]">
+    
+      <meta name="description" content="A getting started guide for the Google Cloud Platform">
+    
+    
+    <link rel="icon" href="http://docker.local:1313/favicon.ico">
+    <link rel="apple-touch-icon" href="http://docker.local:1313/apple-touch-icon.png" />
+    <link rel="stylesheet" href="http://docker.local:1313/css/style.css">
+    <link rel="stylesheet" href="http://docker.local:1313/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://docker.local:1313/css/monokai.css">
+    <link rel="stylesheet" href="http://docker.local:1313/fancybox/jquery.fancybox.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="Getting Started with Google Cloud Platform" />
+<meta property="og:description" content="A getting started guide for the Google Cloud Platform" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://docker.local:1313/post/getting-started-with-google-cloud-platform/" />
+
+
+<meta property="og:updated_time" content="2016-02-14T12:00:00-07:00"/>
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta itemprop="name" content="Getting Started with Google Cloud Platform">
+<meta itemprop="description" content="A getting started guide for the Google Cloud Platform">
+
+
+<meta itemprop="dateModified" content="2016-02-14T12:00:00-07:00" />
+<meta itemprop="wordCount" content="1245">
+
+
+
+<meta itemprop="keywords" content="cloud,complexity,programming,google,introduction,kotlin,language,netkernel,rust," />
+
+    
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:title" content="Getting Started with Google Cloud Platform"/>
+<meta name="twitter:description" content="A getting started guide for the Google Cloud Platform"/>
+<meta name="twitter:site" content="@datablissr"/>
+
+
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="http://docker.local:1313/" id="logo"><i class="logo" style="background-image: url('http://docker.local:1313/css/images/logo.png')"></i><span class="site-title">Resourceful Computing</span></a>
+      <nav id="main-nav">
+          
+
+          
+
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="http://docker.local:1313/"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" results="0" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="q" value="site:http://docker.local:1313/">
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+
+          
+
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" results="0" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="q" value="site:http://docker.local:1313/">
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+	    <aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      <img id="avatar" src="http://docker.local:1313/">
+      <h2 id="name">map[site_description:Guide to Resourceful Computing copyright:Copyright Databliss, LLC 2016 Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice). name:Randolph Kahle honorificSuffix:MBA author:Randolph Kahle bio:Architect - Mentor - Trainer - Consultant location:Fort Collins, CO url:http://www.randolphkahle.info nickName:Randy Kahle avatar:images/randolphkahle/randy_headshot_square.jpg]</h2>
+      
+      
+      
+          <a id="follow" href="https://github.com/resourcefulcomputing">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        7
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          6
+          
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="contact-info profile-block">
+      <table class="contact-list">
+        <tr>
+          
+<td><a href="//github.com/resourcefulcomputing" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//twitter.com/datablissr" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
+
+
+          <td><a href="" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+	    <section id="main">
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+        <div class="article-inner">
+            
+                
+                <img src="http://docker.local:1313/images/google/google-cloud.svg" class="article-banner">
+                
+            
+
+            <header class="article-header">
+    <a href="http://docker.local:1313/post/getting-started-with-google-cloud-platform/">
+    <h1 class="article-title" itemprop="name">
+        Getting Started with Google Cloud Platform
+    </h1>
+    </a>
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2016-02-14 12:00:00 -0700 -0700" itemprop="datePublished">2016-02-14</time>
+            &middot;
+            1245
+            words
+            &middot;
+            6
+            minute read
+        </div>
+
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                <a class="article-category-link" href="http://docker.local:1313/categories/cloud">cloud</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                <a class="article-category-link" href="http://docker.local:1313/tags/google">google</a>
+                &middot;
+                
+                <a class="article-category-link" href="http://docker.local:1313/tags/introduction">introduction</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+            <div class="article-entry" itemprop="articleBody">
+                <p>The Google Cloud Platform (GCP) is fast, capable, and secure.
+This post leads you through steps to create an account and
+then build a cloud-based virtual computer.</p>
+
+<p>GCP is evolving quickly, including the web interface.
+I will avoid using screen shots and instead describe the required steps.
+If major changes occur, I will update this post to keep it current.</p>
+
+<p>This version was tested and published on February 15, 2016.</p>
+
+<p>To complete these steps you will need:</p>
+
+<ul>
+<li>A browser - Chrome, Firefox, IE, or Safari should work.</li>
+<li>An email account. Either a Gmail or non-Gmail account.</li>
+<li>A phone number and a telephone. If you have a cell phone, you can elect to get a confirmation text message or a phone call to obtain a confirmation code. If you have a non-cell phone, you can elect to receive a phone call to obtain a confirmation code.</li>
+</ul>
+
+<h1 id="create-a-google-account">Create a Google Account</h1>
+
+<p>To use the Google Cloud Platform you will need to create a GCP account using
+an email identity.
+You may use either a Gmail account or a non-Gmail email account.</p>
+
+<h3>Account Creation Steps</h3>
+
+<p class="tablesteps">To create a GCP account:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Step</strong></th>
+<th align="left"><strong>Action</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><p>1</p>
+</td>
+<td align="left"><p>Go to the URL: <a href="http://google.com">http://google.com</a></p>
+
+<p>You  see the Google search page with the daily Doodle animated cartoon. Notice the blue
+button in the upper right hand corner with the label: &quot;<strong>Sign In</strong>&quot;.</p>
+</td>
+</tr>
+
+<tr>
+<td align="left"><p>2</p>
+</td>
+<td align="left"><p>Click on the blue button in the upper right corner of the browser with the label
+<strong>Sign In</strong>.</p>
+
+<p>You see a page with the title: &quot;<strong>One account. All of Google.</strong>&quot;</p>
+</td>
+</tr>
+
+<tr>
+<td align="left"><p>3</p>
+</td>
+<td align="left"><p>Instead of logging in, click the link with the text: &quot;<strong>Create account</strong>&quot;.</p>
+
+<p>You see a page with the title: &quot;<strong>Create your Google Account</strong>&quot;.</p>
+</td>
+</tr>
+
+<tr>
+<td align="left"><p>4</p>
+</td>
+<td align="left"><p>Fill in all of the fields on the account page. Note that you have a choice of using a
+GMail account or a non-Gmail account<sup class="footnote-ref" id="fnref:deffd013f0739087590bc42ea07b87c9:1"><a class="footnote" href="#fn:deffd013f0739087590bc42ea07b87c9:1">1</a></sup>.</p>
+
+<p>Click the option box with the text: &quot;<strong>I agree to the Google Terms of Service and Privacy Policy</strong>&quot;.</p>
+
+<p>Click the button with the label: &quot;<strong>Next</strong>&quot;.</p>
+
+<p>You see a page with the title &quot;<strong>Verify your account</strong>&quot; which includes a confirmation of your phone number.</p>
+</td>
+</tr>
+
+<tr>
+<td align="left"><p>5</p>
+</td>
+<td align="left"><p>Select either &quot;<strong>Text message (SMS)</strong>&quot; or &quot;<strong>Voice Call</strong>&quot; as the means to get a confirmation code.
+Click the button with the label: &quot;<strong>Continue</strong>&quot;&quot;.</p>
+
+<p>You see a page with the title: &quot;<strong>Verify your account</strong>&quot;.
+This page displays the email address to which Google has sent a verification link.</p>
+</td>
+</tr>
+
+<tr>
+<td align="left"><p>6</p>
+</td>
+<td align="left"><p>Enter the code your received either as an SMS text message or from the phone call and
+click the button with the label &quot;<strong>Continue</strong>&quot;s.</p>
+
+<p>You see a page with the title: &quot;<strong>Verify your email account</strong>&quot;.</p>
+</td>
+</tr>
+
+<tr>
+<td align="left"><p>7</p>
+</td>
+<td align="left"><p>Check your email client for the message from Google which contains a URL link.</p>
+
+<p><strong>Click the link in the email message</strong>.</p>
+
+<p>You see a Google account login page with your
+email address above a password entry field<sup class="footnote-ref" id="fnref:deffd013f0739087590bc42ea07b87c9:2"><a class="footnote" href="#fn:deffd013f0739087590bc42ea07b87c9:2">2</a></sup>.</p>
+</td>
+</tr>
+
+<tr>
+<td align="left"><p>8</p>
+</td>
+<td align="left"><p>Enter your password and click the button with the label: &quot;<strong>Sign In</strong>&quot;.</p>
+
+<p>You see a Google search page with your account information displayed in the upper right hand corner.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>You have created a Google account with your email address as the identity.
+Next you will use the Google Developer Console to create a Compute Engine instance.</p>
+
+<h1 id="create-a-google-compute-engine-instance">Create a Google Compute Engine Instance</h1>
+
+<h3>Compute Engine Creation Steps</h3>
+
+<p class="tablesteps">To create a Google Compute Engine instance:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Step</strong></th>
+<th align="left"><strong>Action</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><p>1</p>
+</td>
+<td align="left"><p>Go to the URL: <a href="http://console.developer.google.com">http://console.developer.google.com</a></p>
+
+<p>You  see the <strong>Google Developer Console</strong> page.</p>
+</td>
+</tr>
+
+<tr>
+<td align="left"><p>2</p>
+</td>
+<td align="left"><p>At the top of the <strong>Google Developer Console</strong> page notice a blue bar. At the far left side of the
+bar, to the left of the text &quot;<em>Google Developer Console</em>&quot; notice a graphic with three
+parallel white lines. This is the <strong>Gallery</strong> button.</p>
+
+<p><strong>Click and release the Gallery Button</strong></p>
+
+<p>You see a tray emerge from the left hand side of the browser with the products and
+services available in the Google Cloud Platform arranged in groups such as &quot;<em>Compute</em>&quot;,
+&quot;<em>Storage</em>&quot;, and &quot;<em>Big Data</em>&quot;.</p>
+</td>
+</tr>
+
+<tr>
+<td align="left"><p>3</p>
+</td>
+<td align="left"><p>Under the major section with the title &quot;<em>Compute</em>&quot; notice &quot;<em>Compute Engine</em>&quot;.
+<strong>Click on Compute Engine</strong>.</p>
+
+<p>You see a page displayed with the title &quot;<strong>Create a project</strong>&quot;.</p>
+
+<p>A project is the highest level management abstraction for GCP. All compute resources you
+create and use belong to a project. At a minimum a project has one owner<sup class="footnote-ref" id="fnref:deffd013f0739087590bc42ea07b87c9:3"><a class="footnote" href="#fn:deffd013f0739087590bc42ea07b87c9:3">3</a></sup>. The pages
+you see gives you the option to name your project. While you can choose any name your project
+must have a project identifier (project ID) that is unique within Google.</p>
+
+<p><strong>Type a name into the name field.</strong></p>
+
+<p>Notice that Google generates a project ID that is guaranteed to be unique and displays it
+underneath the name.</p>
+
+<p><strong>Answer the two questions by selection either yes or no.</strong></p>
+
+<p><strong>Click the Create button</strong></p>
+
+<p>You see a page with the title &quot;<strong>Try Google Cloud Platform for free</strong>&quot;</p>
+</td>
+</tr>
+
+<tr>
+<td align="left"><p>4</p>
+</td>
+<td align="left"><p>Google requires credit card or checking account information to create the account. You will
+start with a trial account balance of $300 which you can use over 60 days.</p>
+
+<p><strong>Fill in this form, including bank information and press the button with the label
+&quot;Accept and start free trial&quot;</strong></p>
+
+<p>It will take a minute or two to set up your account.</p>
+</td>
+</tr>
+
+<tr>
+<td align="left"><p>5</p>
+</td>
+<td align="left"><p>When Google has created the account you will see a sub-form appear with a button labeled
+&quot;<strong>Create instance</strong>&quot; which is dimmed. When the project is set up and ready the button will
+change from dimmed to full color.</p>
+
+<p><strong>Press the button labeled &quot;Create instance&quot;</strong></p>
+
+<p>You see a new page with Compute Engine configuration options. With this page you can completely
+customize a virtual machine. Explore the various options and make changes if you if you see
+something that intrigues. Otherwise, leave everything as defaults.</p>
+
+<p><strong>Press the button labeled &quot;Create&quot;</strong></p>
+
+<p>You see a new page with an area to list all of your instances. When your instance is ready
+you see a green check mark to the left of the name.</p>
+</td>
+</tr>
+
+<tr>
+<td align="left"><p>6</p>
+</td>
+<td align="left"><p>The instance listing displays the name, zone, and other information. At the far right hand
+side is a button with the label &quot;<strong>SSH</strong>&quot;.</p>
+
+<p><strong>Press the button labeled &quot;SSH&quot;</strong></p>
+
+<p>You see a new window appear that presents a terminal emulator that is connected to your
+virtual machine via an encrypted SSH connection. The command prompt allows you to work with
+the Debian Linux operating system (installed by default). Your user has <code>sudo</code> rights so you
+can install new packages with the Debian APT package manager.</p>
+</td>
+</tr>
+
+<tr>
+<td align="left"><p>6</p>
+</td>
+<td align="left"><p>When you are finished exploring your new virtual computer you may exit the session and the
+terminal window.</p>
+
+<p><strong>Type &quot;exit&quot; at the Linux prompt and press the RETURN key</strong></p>
+
+<p>You see the window disappear. The computer is still running as show on the visiable web page.</p>
+</td>
+</tr>
+
+<tr>
+<td align="left"><p>7</p>
+</td>
+<td align="left"><p>You are charged for the time the virtual machine is running. To stop it:</p>
+
+<p><strong>Click the seletion box on the far left side of the instance listing and then press
+either &quot;Stop&quot; or &quot;Delete&quot; at the top of the page.</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>That is the end of this introduction.
+You have created a Google Cloud Platform account and created and experimented with a Compute Engine instance.</p>
+<div class="footnotes">
+
+<hr>
+
+<ol>
+<li id="fn:deffd013f0739087590bc42ea07b87c9:1">Google supports <a href="https://en.wikipedia.org/wiki/Email_address#Sub-addressing">plus-addressing</a> which may be helpful if you anticipating having more than one account with Google.
+ <a class="footnote-return" href="#fnref:deffd013f0739087590bc42ea07b87c9:1">↩</a></li>
+<li id="fn:deffd013f0739087590bc42ea07b87c9:2">If you have other accounts with Google this page may have one of those accounts displayed instead of your new account. If that is the case then click <strong>Sign in with a different account</strong> and select the new account from the list.
+ <a class="footnote-return" href="#fnref:deffd013f0739087590bc42ea07b87c9:2">↩</a></li>
+<li id="fn:deffd013f0739087590bc42ea07b87c9:3">Google recommends assigning at least two owners. Project may also have editors and viewers which can be users or even other projects.
+ <a class="footnote-return" href="#fnref:deffd013f0739087590bc42ea07b87c9:3">↩</a></li>
+</ol>
+</div>
+
+            </div>
+            <footer class="article-footer">
+    <a data-url="http://docker.local:1313/post/getting-started-with-google-cloud-platform/" data-id="deffd013f0739087590bc42ea07b87c9" class="article-share-link">
+        Share
+    </a>
+    
+</footer>
+
+        </div>
+
+        
+<nav id="article-nav">
+    
+    <a href="http://docker.local:1313/post/the-rust-programming-language/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">The Rust programming language</div>
+    </a>
+    
+
+    
+</nav>
+
+
+    </article>
+    <section id="comments">
+        <div id="disqus_thread">
+            
+        </div>
+    </section>
+
+</section>
+
+	    <aside id="sidebar">
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Recents
+    </h3>
+    <div class="widget">
+        <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://docker.local:1313/post/getting-started-with-google-cloud-platform/" class="thumbnail">
+                    
+                        
+                        <span style="background-image:url(http://docker.local:1313/images/google/google-cloud.svg)" alt="Getting Started with Google Cloud Platform" class="thumbnail-image"></span>
+                        
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-category">
+                        <a class="article-category-link" href="http://docker.local:1313/categories/cloud">
+                        cloud
+                        </a>
+                    </p>
+                    
+                    <p class="item-title"><a href="http://docker.local:1313/post/getting-started-with-google-cloud-platform/" class="title">Getting Started with Google Cloud Platform</a></p>
+                    <p class="item-date">
+                        <time datetime="2016-02-14 12:00:00 -0700 -0700" itemprop="datePublished">2016-02-14</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://docker.local:1313/post/the-rust-programming-language/" class="thumbnail">
+                    
+                        
+                        <span style="background-image:url(http://docker.local:1313/images/rust/rust-logo-blk-400x400.png)" alt="Getting Started with Google Cloud Platform" class="thumbnail-image"></span>
+                        
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-category">
+                        <a class="article-category-link" href="http://docker.local:1313/categories/programming">
+                        programming
+                        </a>
+                    </p>
+                    
+                    <p class="item-title"><a href="http://docker.local:1313/post/the-rust-programming-language/" class="title">The Rust programming language</a></p>
+                    <p class="item-date">
+                        <time datetime="2015-05-16 12:00:00 -0700 -0700" itemprop="datePublished">2015-05-16</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://docker.local:1313/post/kotlin-and-netkernel/" class="thumbnail">
+                    
+                        
+                        <span style="background-image:url(http://docker.local:1313/images/kotlin/kotlin-logo-200x200.png)" alt="Getting Started with Google Cloud Platform" class="thumbnail-image"></span>
+                        
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-category">
+                        <a class="article-category-link" href="http://docker.local:1313/categories/programming">
+                        programming
+                        </a>
+                    </p>
+                    
+                    <p class="item-title"><a href="http://docker.local:1313/post/kotlin-and-netkernel/" class="title">Kotlin and NetKernel</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-06-14 14:42:00 -0700 -0700" itemprop="datePublished">2013-06-14</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://docker.local:1313/post/netkernel-request-and-execution-threads/" class="thumbnail">
+                    
+                        
+                        <span style="background-image:url(http://docker.local:1313/images/netkernel/netkernel-logo-256x256.png)" alt="Getting Started with Google Cloud Platform" class="thumbnail-image"></span>
+                        
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-category">
+                        <a class="article-category-link" href="http://docker.local:1313/categories/programming">
+                        programming
+                        </a>
+                    </p>
+                    
+                    <p class="item-title"><a href="http://docker.local:1313/post/netkernel-request-and-execution-threads/" class="title">NetKernel request and execution threads</a></p>
+                    <p class="item-date">
+                        <time datetime="2012-09-18 05:04:00 -0700 -0700" itemprop="datePublished">2012-09-18</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://docker.local:1313/post/what-language-should-we-use-to-talk-about-roc/" class="thumbnail">
+                    
+                        
+                        <span style="background-image:url(http://docker.local:1313/images/cloud-100x100.png)" alt="Getting Started with Google Cloud Platform" class="thumbnail-image"></span>
+                        
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-category">
+                        <a class="article-category-link" href="http://docker.local:1313/categories/complexity">
+                        complexity
+                        </a>
+                    </p>
+                    
+                    <p class="item-title"><a href="http://docker.local:1313/post/what-language-should-we-use-to-talk-about-roc/" class="title">What language should we use to talk about ROC?</a></p>
+                    <p class="item-date">
+                        <time datetime="2012-09-01 07:29:00 -0700 -0700" itemprop="datePublished">2012-09-01</time>
+                    </p>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/categories/cloud">
+                    cloud
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/categories/complexity">
+                    complexity
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/categories/programming">
+                    programming
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/google">
+                    google
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/introduction">
+                    introduction
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/kotlin">
+                    kotlin
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/language">
+                    language
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/netkernel">
+                    netkernel
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/rust">
+                    rust
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tag cloud
+    </h3>
+    <div class="widget tagcloud">
+        
+        <a href="http://docker.local:1313/tags/google" style="font-size: 12px;">google</a>
+        
+        <a href="http://docker.local:1313/tags/introduction" style="font-size: 12px;">introduction</a>
+        
+        <a href="http://docker.local:1313/tags/kotlin" style="font-size: 12px;">kotlin</a>
+        
+        <a href="http://docker.local:1313/tags/language" style="font-size: 12px;">language</a>
+        
+        <a href="http://docker.local:1313/tags/netkernel" style="font-size: 12px;">netkernel</a>
+        
+        <a href="http://docker.local:1313/tags/rust" style="font-size: 12px;">rust</a>
+        
+    </div>
+</div>
+
+
+
+
+    <div id="toTop" class="fa fa-chevron-up"></div>
+</aside>
+
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016
+      
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://docker.local:1313/fancybox/jquery.fancybox.pack.js"></script>
+<script src="http://docker.local:1313/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<!-- MathJax -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script data-no-instant>document.write('<script src="/livereload.js?mindelay=10"></' + 'script>')</script></body>
+</html>

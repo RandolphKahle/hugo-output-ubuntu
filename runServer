@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# File: runServer
+#
+# Purpose:
+#   Script will run Hugo in auto-update mode
+#
+
+rm -fr public
+hugo server --watch --renderToDisk=true baseURL="http://docker.local:1313/" --logFile=log.txt

@@ -1,0 +1,212 @@
++++
+title = "Getting Started with Google Cloud Platform"
+description = "A getting started guide for the Google Cloud Platform"
+date = "2016-02-14T12:00:00-07:00"
+tags = ["google", "introduction"]
+categories = ["cloud"]
+menu = ""
+
+bannerSmall  = "images/google/google-cloud.svg"
+bannerMedium = "images/google/google-cloud.svg"
+banner       = "images/google/google-cloud.svg"
+
+[rdfarticleimage]
+  url = "http://www.resourcefulcomputing.com/images/google/google-cloud-114x129.png"
+  height = "114"
+  width = "129"
+
+[dates]
+	published = "2016-02-14T12:00:00-07:00"
+	modified =  "2016-02-14T12:00:00-07:00"
+
++++
+ 
+The Google Cloud Platform (GCP) is fast, capable, and secure. 
+This post leads you through steps to create an account and
+then build a cloud-based virtual computer.
+
+GCP is evolving quickly, including the web interface.
+I will avoid using screen shots and instead describe the required steps.
+If major changes occur, I will update this post to keep it current.
+
+This version was tested and published on February 15, 2016.
+
+To complete these steps you will need:
++ A browser - Chrome, Firefox, IE, or Safari should work.
++ An email account. Either a Gmail or non-Gmail account.
++ A phone number and a telephone. If you have a cell phone, you can elect to get a confirmation text message or a phone call to obtain a confirmation code. If you have a non-cell phone, you can elect to receive a phone call to obtain a confirmation code.
+
+Create a Google Account
+===========================
+
+To use the Google Cloud Platform you will need to create a GCP account using
+an email identity. 
+You may use either a Gmail account or a non-Gmail email account.
+
+
+<h3>Account Creation Steps</h3>
+
+<p class="tablesteps">To create a GCP account:</p>
+
+
+|+-----------------------------------------------------------------------------------------------------|
+| **Step** | **Action**                                                                                
+|:---------|:------------------------------------------------------------------------------------------|
+| 1        | Go to the URL: <a href="http://google.com">http://google.com</a>                          
+|  	       |                                                                                           
+|  	       | You  see the Google search page with the daily Doodle animated cartoon. Notice the blue 
+|          | button in the upper right hand corner with the label: "**Sign In**".               
+|----------|-------------------------------------------------------------------------------------------|
+| 2        | Click on the blue button in the upper right corner of the browser with the label          
+|          | **Sign In**.                                                                              
+|          |                                                                                           
+|          | You see a page with the title: "**One account. All of Google.**"
+|----------|-------------------------------------------------------------------------------------------|
+| 3        | Instead of logging in, click the link with the text: "**Create account**".
+|          |                                                                                           
+|          | You see a page with the title: "**Create your Google Account**".                        
+|----------|-------------------------------------------------------------------------------------------|
+| 4        | Fill in all of the fields on the account page. Note that you have a choice of using a 
+|          | GMail account or a non-Gmail account[^1].   
+|          |                                          
+|          | Click the option box with the text: "**I agree to the Google Terms of Service and Privacy Policy**".
+|          |                                          
+|          | Click the button with the label: "**Next**".                       
+|          |                                 
+|          | You see a page with the title "**Verify your account**" which includes a confirmation of your phone number.
+|----------|-------------------------------------------------------------------------------------------|
+| 5        | Select either "**Text message (SMS)**" or "**Voice Call**" as the means to get a confirmation code.
+|          | Click the button with the label: "**Continue**"".
+|          |  
+|          | You see a page with the title: "**Verify your account**". 
+|          | This page displays the email address to which Google has sent a verification link.
+|----------|-------------------------------------------------------------------------------------------|
+| 6        | Enter the code your received either as an SMS text message or from the phone call and 
+|          | click the button with the label "**Continue**"s.                       
+|          |                                 
+|          | You see a page with the title: "**Verify your email account**".
+|----------|-------------------------------------------------------------------------------------------|
+| 7        | Check your email client for the message from Google which contains a URL link.
+|          | 
+|          | **Click the link in the email message**.
+|          | 
+|          | You see a Google account login page with your 
+|          | email address above a password entry field[^2].                                           
+|+------------------------------------------------------------------------------------------------------
+| 8        | Enter your password and click the button with the label: "**Sign In**".                
+|          |
+|          | You see a Google search page with your account information displayed in the upper right hand corner.
+|-------------------------------------------------------------------------------------------------------
+
+
+You have created a Google account with your email address as the identity.
+Next you will use the Google Developer Console to create a Compute Engine instance.
+
+
+Create a Google Compute Engine Instance
+=======================================
+
+
+<h3>Compute Engine Creation Steps</h3>
+
+
+<p class="tablesteps">To create a Google Compute Engine instance:</p>
+
+
+|+-----------------------------------------------------------------------------------------------------|
+| **Step** | **Action**                                                                                
+|:---------|:------------------------------------------------------------------------------------------|
+| 1        | Go to the URL: <a href="http://console.developer.google.com">http://console.developer.google.com</a>
+|  	       |                                                                                           
+|  	       | You  see the **Google Developer Console** page.               
+|----------|-------------------------------------------------------------------------------------------|
+| 2        | At the top of the **Google Developer Console** page notice a blue bar. At the far left side of the 
+|          | bar, to the left of the text "_Google Developer Console_" notice a graphic with three 
+|          | parallel white lines. This is the **Gallery** button.
+|          |                                                                                           
+|          | **Click and release the Gallery Button**
+|          |                                                                                           
+|          | You see a tray emerge from the left hand side of the browser with the products and 
+|          | services available in the Google Cloud Platform arranged in groups such as "_Compute_", 
+|          | "_Storage_", and "_Big Data_".
+|----------|-------------------------------------------------------------------------------------------|
+| 3        | Under the major section with the title "_Compute_" notice "_Compute Engine_". 
+|          | **Click on Compute Engine**.
+|          |                                                    
+|          | You see a page displayed with the title "**Create a project**".
+|          |                                       
+|          | A project is the highest level management abstraction for GCP. All compute resources you
+|          | create and use belong to a project. At a minimum a project has one owner[^3]. The pages
+|          | you see gives you the option to name your project. While you can choose any name your project
+|          | must have a project identifier (project ID) that is unique within Google. 
+|          | 
+|          | **Type a name into the name field.**
+|          | 
+|          | Notice that Google generates a project ID that is guaranteed to be unique and displays it
+|          | underneath the name.        
+|          | 
+|          | **Answer the two questions by selection either yes or no.**
+|          | 
+|          | **Click the Create button**
+|          | 
+|          | You see a page with the title "**Try Google Cloud Platform for free**"
+|----------|-------------------------------------------------------------------------------------------|
+| 4        | Google requires credit card or checking account information to create the account. You will 
+|          | start with a trial account balance of $300 which you can use over 60 days.
+|          | 
+|          | **Fill in this form, including bank information and press the button with the label
+|          | "Accept and start free trial"**
+|          | 
+|          | It will take a minute or two to set up your account.
+|----------|-------------------------------------------------------------------------------------------|
+| 5        | When Google has created the account you will see a sub-form appear with a button labeled
+|          | "**Create instance**" which is dimmed. When the project is set up and ready the button will 
+|          | change from dimmed to full color.
+|          | 
+|          | **Press the button labeled "Create instance"**
+|          | 
+|          | You see a new page with Compute Engine configuration options. With this page you can completely
+|          | customize a virtual machine. Explore the various options and make changes if you if you see
+|          | something that intrigues. Otherwise, leave everything as defaults.
+|          |                                          
+|          | **Press the button labeled "Create"**
+|          | 
+|          | You see a new page with an area to list all of your instances. When your instance is ready
+|          | you see a green check mark to the left of the name. 
+|----------|-------------------------------------------------------------------------------------------|
+| 6        | The instance listing displays the name, zone, and other information. At the far right hand
+|          | side is a button with the label "**SSH**". 
+|          | 
+|          | **Press the button labeled "SSH"**
+|          | 
+|          | You see a new window appear that presents a terminal emulator that is connected to your
+|          | virtual machine via an encrypted SSH connection. The command prompt allows you to work with
+|          | the Debian Linux operating system (installed by default). Your user has `sudo` rights so you
+|          | can install new packages with the Debian APT package manager. 
+|----------|-------------------------------------------------------------------------------------------|
+| 6        | When you are finished exploring your new virtual computer you may exit the session and the
+|          | terminal window.
+|          | 
+|          | **Type "exit" at the Linux prompt and press the RETURN key**
+|          | 
+|          | You see the window disappear. The computer is still running as show on the visiable web page.
+|----------|-------------------------------------------------------------------------------------------|
+| 7        | You are charged for the time the virtual machine is running. To stop it:
+|          | 
+|          | **Click the seletion box on the far left side of the instance listing and then press 
+|          | either "Stop" or "Delete" at the top of the page.** 
+|----------|-------------------------------------------------------------------------------------------|
+
+That is the end of this introduction. 
+You have created a Google Cloud Platform account and created and experimented with a Compute Engine instance.
+
+
+[^1]: Google supports [plus-addressing](https://en.wikipedia.org/wiki/Email_address#Sub-addressing) which may be helpful if you anticipating having more than one account with Google.
+[^2]: If you have other accounts with Google this page may have one of those accounts displayed instead of your new account. If that is the case then click **Sign in with a different account** and select the new account from the list.
+[^3]: Google recommends assigning at least two owners. Project may also have editors and viewers which can be users or even other projects.
+
+
+
+[googleurl]: http://google.com/        "http://google.com"
+[yahoo]:     http://search.yahoo.com/  "Yahoo Search"
+[msn]:       http://search.msn.com/    "MSN Search"

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Complexity on Resourceful Computing</title>
+    <link>http://docker.local:1313/categories/complexity/</link>
+    <description>Recent content in Complexity on Resourceful Computing</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Sep 2012 07:29:00 -0700</lastBuildDate>
+    <atom:link href="http://docker.local:1313/categories/complexity/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>What language should we use to talk about ROC?</title>
+      <link>http://docker.local:1313/post/what-language-should-we-use-to-talk-about-roc/</link>
+      <pubDate>Sat, 01 Sep 2012 07:29:00 -0700</pubDate>
+      
+      <guid>http://docker.local:1313/post/what-language-should-we-use-to-talk-about-roc/</guid>
+      <description>&lt;p&gt;Humans thrive on communication and we have invented many different forms.
+For example – music, dance, written communication which includes novels, poetry, short stories, essays, blogs, etc., as well as visual forms such as paintings.
+For particular domains, such as mathematics, we have developed symbolic languages that allows us to succinctly express our ideas.
+In the field of information systems we have different ways of expressing ourselves from the highest altitude view to executable code.&lt;/p&gt;
+
+&lt;p&gt;Resource Oriented Computing is an approach to conceive and implement information systems.
+It is natural to start with a familiar language to discuss the abstraction and then extend the language when required.
+In the eight years I have been working with Resource Oriented Computing I have wrestled with this language.
+It is frustrating because the concepts behind ROC are very simple and yet, we do not have an agreed upon set of words or notational system.
+I now think that the ROC community needs a new language.&lt;/p&gt;
+
+&lt;p&gt;I realize that the language we use helps us articulate out thoughts and shapes our thinking by facilitating and constraining.
+A language facilitates thought by making available words or symbols that have an agreed upon meaning and which allow us to easily note what we want to communicate.
+If that language lacks words or symbols for a particular new thought,
+then it constrains us and it forces us to either extend the language or take more time to build a line of reasoning.&lt;/p&gt;
+
+&lt;p&gt;Which languages have we tried? I have used pictures with address spaces (that look like clouds),
+endpoints (that look like rounded rectangles), and requests (that look like arcs).
+These symbols were first designed by Peter Rodgers for the NetKernel documentation.
+In conversations with Peter he has shown me a more mathematical and symbolic way to describe ROC.
+Tom Hicks has shared his ideas about a Lisp-like notation.
+I have experimented with a DSL to extend the Groovy programming language.
+The NetKernel explorer tool uses a graphical rendering.
+The NetKernel nCode composition tool presents a graphical view of endpoints and relationships but ignores address spaces.
+And finally, to create a running NetKernel system, one uses a text editor to create an XML document.&lt;/p&gt;
+
+&lt;p&gt;My final complaint about our current state is that no language supports a discussion about information flow through a NetKernel system.
+All of the languages are about the composition of spaces, endpoints, and request / response processing.
+What actually happens in a NetKernel system is that information flows through the ROC architecture.
+Isn’t that the whole point of an information system? If so, why is that not the primary focus of a language?&lt;/p&gt;
+
+&lt;p&gt;I leave this as a challenge to the NetKernel / ROC community.
+Let us create a new language for ROC.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Resourceful Computing</title>
+      <link>http://docker.local:1313/post/resourceful-computing/</link>
+      <pubDate>Sat, 20 Mar 2010 02:48:00 -0700</pubDate>
+      
+      <guid>http://docker.local:1313/post/resourceful-computing/</guid>
+      <description>&lt;p&gt;I don&amp;rsquo;t enjoy complexity.&lt;/p&gt;
+
+&lt;p&gt;This blog will be an exploration of resource oriented computing with a
+particular focus on its ability to reduce complexity in software systems.&lt;/p&gt;
+
+&lt;p&gt;While this will be a record of a journey of exploration, I do welcome comments and feedback.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s see where this leads&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

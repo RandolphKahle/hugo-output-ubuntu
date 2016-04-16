@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Language on Resourceful Computing</title>
+    <link>http://docker.local:1313/tags/language/</link>
+    <description>Recent content in Language on Resourceful Computing</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 16 May 2015 12:00:00 -0700</lastBuildDate>
+    <atom:link href="http://docker.local:1313/tags/language/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The Rust programming language</title>
+      <link>http://docker.local:1313/post/the-rust-programming-language/</link>
+      <pubDate>Sat, 16 May 2015 12:00:00 -0700</pubDate>
+      
+      <guid>http://docker.local:1313/post/the-rust-programming-language/</guid>
+      <description>&lt;p&gt;The &lt;a href=&#34;http://rust-lang.org&#34; title=&#34;Rust Language&#34;&gt;Rust programming language&lt;/a&gt;  has reached version 1.0.&lt;/p&gt;
+
+&lt;p&gt;I decided to spend some time learning and evaluating the Rust programming language from the perspective of resource orienting computing.
+Rust might seem like an unlikely candidate for ROC development because it designed to be a low level system programming language to compete with C and C++.
+I guess that is part of the intrigue for me - discovering if a modern, safe, fast programming language can serve as a foundation for the resource oriented computing approach.&lt;/p&gt;
+
+&lt;p&gt;If Rust is to serve as a ROC language it must be able to deal with resources as a general abstraction. And that&amp;rsquo;s where I&amp;rsquo;ll start - learning and experimenting with Rust as a way to model resources.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Kotlin and NetKernel</title>
+      <link>http://docker.local:1313/post/kotlin-and-netkernel/</link>
+      <pubDate>Fri, 14 Jun 2013 14:42:00 -0700</pubDate>
+      
+      <guid>http://docker.local:1313/post/kotlin-and-netkernel/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;This article was written more than three years before the pending release of Kotlin.
+The Kotlin language has evolved and I have removed the NetKernel modules from GitHub while
+I await the final release. I will provide a link to an updated post in the preface of this post
+when the dust settles. &amp;ndash; Randolph Kahle, February 12, 2016.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Kotlin is a new programming language from JetBrains, the publishers of IntelliJ
+and other development tools. Their goal is to make Kotlin an industrial strength
+replacement for Java.&lt;/p&gt;
+
+&lt;p&gt;I am intrigued because Kotlin has type safety, modern language features,
+very good IDE support, and can interoperate easily with existing Java programs and libraries.&lt;/p&gt;
+
+&lt;p&gt;To facilitate experimentation, I developed a NetKernel module &lt;code&gt;urn:org:netkernelroc:lang:kotlin&lt;/code&gt;
+and made it available on the NetKernelROC community Apposite repository.
+The current release (version 0.1.0 on June 14, 2013) includes Kotlin M5.2 (the 0.5.748 build).
+This is a Kotlin milestone release.
+While I have found the NetKernel code I&amp;rsquo;ve written with it to run just fine, you should probably
+consider this experimental.
+I will update the NetKernel module as Kotlin releases are published.
+Once you connect your NetKernel instance with the NetKernelROC Apposite repository you should be
+automatically notified of the updates.&lt;/p&gt;
+
+&lt;p&gt;The NetKernel Kotlin module is hosted on GitHub at
+&lt;a href=&#34;https://github.com/netkernelroc/urn.org.netkernelroc.lang.kotlin&#34;&gt;https://github.com/netkernelroc/urn.org.netkernelroc.lang.kotlin&lt;/a&gt;
+Currently the module contains Kotlin JAR files with language runtime support.
+My goal is to also include Kotlin code (in the form of classes and extension functions)
+to extend internal NetKernel code such as the NKF API and HDS to make programming easier
+than when using Java.
+If you are interested in working at this level, then you should fork and clone a copy of
+this module from GitHub and propose updates.
+You will find that I have written two Kotlin based HDS builders.
+The first is a Kotlin replacement for HDSBuilder (facilitated by the IntelliJ &amp;ldquo;convert Java code to Kotlin&amp;rdquo; service).
+The second simply wraps the NetKernel HDSBuilder and delegates to it.
+I wrote both because I&amp;rsquo;m not certain which will be the better approach.&lt;/p&gt;
+
+&lt;p&gt;My first experimentation with a NetKernel module that uses Kotlin can be found in the
+NetKernel module &lt;code&gt;urn:org:netkernelroc:util:file&lt;/code&gt;, also hosted on GitHub, at
+&lt;a href=&#34;https://github.com/netkernelroc/urn.org.netkernelroc.util.file&#34;&gt;https://github.com/netkernelroc/urn.org.netkernelroc.util.file&lt;/a&gt;.
+This module, also in a very early release, contains the service &lt;code&gt;active:fileList&lt;/code&gt;
+which returns a list of files in a specified directory.
+It uses the Kotlin replacement for HDSBuilder.
+If you look at the module &lt;code&gt;urn:org:netkernelroc:util:file:test&lt;/code&gt; you will find an experimental Kotlin DSL
+to facilitate the creation of XUnit testlist.xml resources.&lt;/p&gt;
+
+&lt;p&gt;My hope is that Kotlin will turn out to be a good language to standardize on for NetKernel system development.
+I experimented with Groovy, but found it frustrating (that&amp;rsquo;s another discussion).
+I wrote a Scala language module for NetKernel a while ago, but Scala programs seem too opaque.&lt;/p&gt;
+
+&lt;p&gt;I released this module on GitHub and through the NetKernelROC community to make it easy
+for anyone in the community to join me in exploring Kotlin.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>What language should we use to talk about ROC?</title>
+      <link>http://docker.local:1313/post/what-language-should-we-use-to-talk-about-roc/</link>
+      <pubDate>Sat, 01 Sep 2012 07:29:00 -0700</pubDate>
+      
+      <guid>http://docker.local:1313/post/what-language-should-we-use-to-talk-about-roc/</guid>
+      <description>&lt;p&gt;Humans thrive on communication and we have invented many different forms.
+For example – music, dance, written communication which includes novels, poetry, short stories, essays, blogs, etc., as well as visual forms such as paintings.
+For particular domains, such as mathematics, we have developed symbolic languages that allows us to succinctly express our ideas.
+In the field of information systems we have different ways of expressing ourselves from the highest altitude view to executable code.&lt;/p&gt;
+
+&lt;p&gt;Resource Oriented Computing is an approach to conceive and implement information systems.
+It is natural to start with a familiar language to discuss the abstraction and then extend the language when required.
+In the eight years I have been working with Resource Oriented Computing I have wrestled with this language.
+It is frustrating because the concepts behind ROC are very simple and yet, we do not have an agreed upon set of words or notational system.
+I now think that the ROC community needs a new language.&lt;/p&gt;
+
+&lt;p&gt;I realize that the language we use helps us articulate out thoughts and shapes our thinking by facilitating and constraining.
+A language facilitates thought by making available words or symbols that have an agreed upon meaning and which allow us to easily note what we want to communicate.
+If that language lacks words or symbols for a particular new thought,
+then it constrains us and it forces us to either extend the language or take more time to build a line of reasoning.&lt;/p&gt;
+
+&lt;p&gt;Which languages have we tried? I have used pictures with address spaces (that look like clouds),
+endpoints (that look like rounded rectangles), and requests (that look like arcs).
+These symbols were first designed by Peter Rodgers for the NetKernel documentation.
+In conversations with Peter he has shown me a more mathematical and symbolic way to describe ROC.
+Tom Hicks has shared his ideas about a Lisp-like notation.
+I have experimented with a DSL to extend the Groovy programming language.
+The NetKernel explorer tool uses a graphical rendering.
+The NetKernel nCode composition tool presents a graphical view of endpoints and relationships but ignores address spaces.
+And finally, to create a running NetKernel system, one uses a text editor to create an XML document.&lt;/p&gt;
+
+&lt;p&gt;My final complaint about our current state is that no language supports a discussion about information flow through a NetKernel system.
+All of the languages are about the composition of spaces, endpoints, and request / response processing.
+What actually happens in a NetKernel system is that information flows through the ROC architecture.
+Isn’t that the whole point of an information system? If so, why is that not the primary focus of a language?&lt;/p&gt;
+
+&lt;p&gt;I leave this as a challenge to the NetKernel / ROC community.
+Let us create a new language for ROC.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

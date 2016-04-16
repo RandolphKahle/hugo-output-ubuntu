@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rust on Resourceful Computing</title>
+    <link>http://docker.local:1313/tags/rust/</link>
+    <description>Recent content in Rust on Resourceful Computing</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 16 May 2015 12:00:00 -0700</lastBuildDate>
+    <atom:link href="http://docker.local:1313/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The Rust programming language</title>
+      <link>http://docker.local:1313/post/the-rust-programming-language/</link>
+      <pubDate>Sat, 16 May 2015 12:00:00 -0700</pubDate>
+      
+      <guid>http://docker.local:1313/post/the-rust-programming-language/</guid>
+      <description>&lt;p&gt;The &lt;a href=&#34;http://rust-lang.org&#34; title=&#34;Rust Language&#34;&gt;Rust programming language&lt;/a&gt;  has reached version 1.0.&lt;/p&gt;
+
+&lt;p&gt;I decided to spend some time learning and evaluating the Rust programming language from the perspective of resource orienting computing.
+Rust might seem like an unlikely candidate for ROC development because it designed to be a low level system programming language to compete with C and C++.
+I guess that is part of the intrigue for me - discovering if a modern, safe, fast programming language can serve as a foundation for the resource oriented computing approach.&lt;/p&gt;
+
+&lt;p&gt;If Rust is to serve as a ROC language it must be able to deal with resources as a general abstraction. And that&amp;rsquo;s where I&amp;rsquo;ll start - learning and experimenting with Rust as a way to model resources.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

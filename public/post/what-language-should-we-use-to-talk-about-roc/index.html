@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>What language should we use to talk about ROC? &middot; Resourceful Computing</title>
+    <meta name="generator" content="Hugo 0.15" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="map[url:http://www.randolphkahle.info nickName:Randy Kahle avatar:images/randolphkahle/randy_headshot_square.jpg bio:Architect - Mentor - Trainer - Consultant location:Fort Collins, CO site_description:Guide to Resourceful Computing copyright:Copyright Databliss, LLC 2016 Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice). name:Randolph Kahle honorificSuffix:MBA author:Randolph Kahle]">
+    
+      <meta name="description" content="A discussion about a language to describe Resource Oriented Computing">
+    
+    
+    <link rel="icon" href="http://docker.local:1313/favicon.ico">
+    <link rel="apple-touch-icon" href="http://docker.local:1313/apple-touch-icon.png" />
+    <link rel="stylesheet" href="http://docker.local:1313/css/style.css">
+    <link rel="stylesheet" href="http://docker.local:1313/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://docker.local:1313/css/monokai.css">
+    <link rel="stylesheet" href="http://docker.local:1313/fancybox/jquery.fancybox.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="What language should we use to talk about ROC?" />
+<meta property="og:description" content="A discussion about a language to describe Resource Oriented Computing" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://docker.local:1313/post/what-language-should-we-use-to-talk-about-roc/" />
+
+
+<meta property="og:updated_time" content="2012-09-01T07:29:00-07:00"/>
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta itemprop="name" content="What language should we use to talk about ROC?">
+<meta itemprop="description" content="A discussion about a language to describe Resource Oriented Computing">
+
+
+<meta itemprop="dateModified" content="2012-09-01T07:29:00-07:00" />
+<meta itemprop="wordCount" content="460">
+
+
+
+<meta itemprop="keywords" content="cloud,complexity,programming,google,introduction,kotlin,language,netkernel,rust," />
+
+    
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:title" content="What language should we use to talk about ROC?"/>
+<meta name="twitter:description" content="A discussion about a language to describe Resource Oriented Computing"/>
+<meta name="twitter:site" content="@datablissr"/>
+
+
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="http://docker.local:1313/" id="logo"><i class="logo" style="background-image: url('http://docker.local:1313/css/images/logo.png')"></i><span class="site-title">Resourceful Computing</span></a>
+      <nav id="main-nav">
+          
+
+          
+
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="http://docker.local:1313/"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" results="0" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="q" value="site:http://docker.local:1313/">
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+
+          
+
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" results="0" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="q" value="site:http://docker.local:1313/">
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+	    <aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      <img id="avatar" src="http://docker.local:1313/">
+      <h2 id="name">map[honorificSuffix:MBA author:Randolph Kahle bio:Architect - Mentor - Trainer - Consultant location:Fort Collins, CO site_description:Guide to Resourceful Computing copyright:Copyright Databliss, LLC 2016 Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice). name:Randolph Kahle nickName:Randy Kahle avatar:images/randolphkahle/randy_headshot_square.jpg url:http://www.randolphkahle.info]</h2>
+      
+      
+      
+          <a id="follow" href="https://github.com/resourcefulcomputing">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        7
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          6
+          
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="contact-info profile-block">
+      <table class="contact-list">
+        <tr>
+          
+<td><a href="//github.com/resourcefulcomputing" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//twitter.com/datablissr" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
+
+
+          <td><a href="" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+	    <section id="main">
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+        <div class="article-inner">
+            
+                
+                <img src="http://docker.local:1313/images/cloud-100x100.png" class="article-banner">
+                
+            
+
+            <header class="article-header">
+    <a href="http://docker.local:1313/post/what-language-should-we-use-to-talk-about-roc/">
+    <h1 class="article-title" itemprop="name">
+        What language should we use to talk about ROC?
+    </h1>
+    </a>
+    <div class="article-meta">
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2012-09-01 07:29:00 -0700 -0700" itemprop="datePublished">2012-09-01</time>
+            &middot;
+            460
+            words
+            &middot;
+            3
+            minute read
+        </div>
+
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                <a class="article-category-link" href="http://docker.local:1313/categories/complexity">complexity</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                <a class="article-category-link" href="http://docker.local:1313/tags/language">language</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+            <div class="article-entry" itemprop="articleBody">
+                <p>Humans thrive on communication and we have invented many different forms.
+For example – music, dance, written communication which includes novels, poetry, short stories, essays, blogs, etc., as well as visual forms such as paintings.
+For particular domains, such as mathematics, we have developed symbolic languages that allows us to succinctly express our ideas.
+In the field of information systems we have different ways of expressing ourselves from the highest altitude view to executable code.</p>
+
+<p>Resource Oriented Computing is an approach to conceive and implement information systems.
+It is natural to start with a familiar language to discuss the abstraction and then extend the language when required.
+In the eight years I have been working with Resource Oriented Computing I have wrestled with this language.
+It is frustrating because the concepts behind ROC are very simple and yet, we do not have an agreed upon set of words or notational system.
+I now think that the ROC community needs a new language.</p>
+
+<p>I realize that the language we use helps us articulate out thoughts and shapes our thinking by facilitating and constraining.
+A language facilitates thought by making available words or symbols that have an agreed upon meaning and which allow us to easily note what we want to communicate.
+If that language lacks words or symbols for a particular new thought,
+then it constrains us and it forces us to either extend the language or take more time to build a line of reasoning.</p>
+
+<p>Which languages have we tried? I have used pictures with address spaces (that look like clouds),
+endpoints (that look like rounded rectangles), and requests (that look like arcs).
+These symbols were first designed by Peter Rodgers for the NetKernel documentation.
+In conversations with Peter he has shown me a more mathematical and symbolic way to describe ROC.
+Tom Hicks has shared his ideas about a Lisp-like notation.
+I have experimented with a DSL to extend the Groovy programming language.
+The NetKernel explorer tool uses a graphical rendering.
+The NetKernel nCode composition tool presents a graphical view of endpoints and relationships but ignores address spaces.
+And finally, to create a running NetKernel system, one uses a text editor to create an XML document.</p>
+
+<p>My final complaint about our current state is that no language supports a discussion about information flow through a NetKernel system.
+All of the languages are about the composition of spaces, endpoints, and request / response processing.
+What actually happens in a NetKernel system is that information flows through the ROC architecture.
+Isn’t that the whole point of an information system? If so, why is that not the primary focus of a language?</p>
+
+<p>I leave this as a challenge to the NetKernel / ROC community.
+Let us create a new language for ROC.</p>
+
+            </div>
+            <footer class="article-footer">
+    <a data-url="http://docker.local:1313/post/what-language-should-we-use-to-talk-about-roc/" data-id="57c6f05f595de30b59563368acb40497" class="article-share-link">
+        Share
+    </a>
+    
+</footer>
+
+        </div>
+
+        
+<nav id="article-nav">
+    
+    <a href="http://docker.local:1313/post/monitoring-configuration-changes-in-netkernel-transports/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">Monitoring configuration changes in NetKernel transports</div>
+    </a>
+    
+
+    
+    <a href="http://docker.local:1313/post/netkernel-request-and-execution-threads/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">NetKernel request and execution threads</div>
+    </a>
+    
+</nav>
+
+
+    </article>
+    <section id="comments">
+        <div id="disqus_thread">
+            
+        </div>
+    </section>
+
+</section>
+
+	    <aside id="sidebar">
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Recents
+    </h3>
+    <div class="widget">
+        <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://docker.local:1313/post/getting-started-with-google-cloud-platform/" class="thumbnail">
+                    
+                        
+                        <span style="background-image:url(http://docker.local:1313/images/google/google-cloud.svg)" alt="What language should we use to talk about ROC?" class="thumbnail-image"></span>
+                        
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-category">
+                        <a class="article-category-link" href="http://docker.local:1313/categories/cloud">
+                        cloud
+                        </a>
+                    </p>
+                    
+                    <p class="item-title"><a href="http://docker.local:1313/post/getting-started-with-google-cloud-platform/" class="title">Getting Started with Google Cloud Platform</a></p>
+                    <p class="item-date">
+                        <time datetime="2016-02-14 12:00:00 -0700 -0700" itemprop="datePublished">2016-02-14</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://docker.local:1313/post/the-rust-programming-language/" class="thumbnail">
+                    
+                        
+                        <span style="background-image:url(http://docker.local:1313/images/rust/rust-logo-blk-400x400.png)" alt="What language should we use to talk about ROC?" class="thumbnail-image"></span>
+                        
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-category">
+                        <a class="article-category-link" href="http://docker.local:1313/categories/programming">
+                        programming
+                        </a>
+                    </p>
+                    
+                    <p class="item-title"><a href="http://docker.local:1313/post/the-rust-programming-language/" class="title">The Rust programming language</a></p>
+                    <p class="item-date">
+                        <time datetime="2015-05-16 12:00:00 -0700 -0700" itemprop="datePublished">2015-05-16</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://docker.local:1313/post/kotlin-and-netkernel/" class="thumbnail">
+                    
+                        
+                        <span style="background-image:url(http://docker.local:1313/images/kotlin/kotlin-logo-200x200.png)" alt="What language should we use to talk about ROC?" class="thumbnail-image"></span>
+                        
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-category">
+                        <a class="article-category-link" href="http://docker.local:1313/categories/programming">
+                        programming
+                        </a>
+                    </p>
+                    
+                    <p class="item-title"><a href="http://docker.local:1313/post/kotlin-and-netkernel/" class="title">Kotlin and NetKernel</a></p>
+                    <p class="item-date">
+                        <time datetime="2013-06-14 14:42:00 -0700 -0700" itemprop="datePublished">2013-06-14</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://docker.local:1313/post/netkernel-request-and-execution-threads/" class="thumbnail">
+                    
+                        
+                        <span style="background-image:url(http://docker.local:1313/images/netkernel/netkernel-logo-256x256.png)" alt="What language should we use to talk about ROC?" class="thumbnail-image"></span>
+                        
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-category">
+                        <a class="article-category-link" href="http://docker.local:1313/categories/programming">
+                        programming
+                        </a>
+                    </p>
+                    
+                    <p class="item-title"><a href="http://docker.local:1313/post/netkernel-request-and-execution-threads/" class="title">NetKernel request and execution threads</a></p>
+                    <p class="item-date">
+                        <time datetime="2012-09-18 05:04:00 -0700 -0700" itemprop="datePublished">2012-09-18</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://docker.local:1313/post/what-language-should-we-use-to-talk-about-roc/" class="thumbnail">
+                    
+                        
+                        <span style="background-image:url(http://docker.local:1313/images/cloud-100x100.png)" alt="What language should we use to talk about ROC?" class="thumbnail-image"></span>
+                        
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-category">
+                        <a class="article-category-link" href="http://docker.local:1313/categories/complexity">
+                        complexity
+                        </a>
+                    </p>
+                    
+                    <p class="item-title"><a href="http://docker.local:1313/post/what-language-should-we-use-to-talk-about-roc/" class="title">What language should we use to talk about ROC?</a></p>
+                    <p class="item-date">
+                        <time datetime="2012-09-01 07:29:00 -0700 -0700" itemprop="datePublished">2012-09-01</time>
+                    </p>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/categories/cloud">
+                    cloud
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/categories/complexity">
+                    complexity
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/categories/programming">
+                    programming
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/google">
+                    google
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/introduction">
+                    introduction
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/kotlin">
+                    kotlin
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/language">
+                    language
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/netkernel">
+                    netkernel
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                <a class="category-list-link" href="http://docker.local:1313/tags/rust">
+                    rust
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tag cloud
+    </h3>
+    <div class="widget tagcloud">
+        
+        <a href="http://docker.local:1313/tags/google" style="font-size: 12px;">google</a>
+        
+        <a href="http://docker.local:1313/tags/introduction" style="font-size: 12px;">introduction</a>
+        
+        <a href="http://docker.local:1313/tags/kotlin" style="font-size: 12px;">kotlin</a>
+        
+        <a href="http://docker.local:1313/tags/language" style="font-size: 12px;">language</a>
+        
+        <a href="http://docker.local:1313/tags/netkernel" style="font-size: 12px;">netkernel</a>
+        
+        <a href="http://docker.local:1313/tags/rust" style="font-size: 12px;">rust</a>
+        
+    </div>
+</div>
+
+
+
+
+    <div id="toTop" class="fa fa-chevron-up"></div>
+</aside>
+
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016
+      
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://docker.local:1313/fancybox/jquery.fancybox.pack.js"></script>
+<script src="http://docker.local:1313/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<!-- MathJax -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script data-no-instant>document.write('<script src="/livereload.js?mindelay=10"></' + 'script>')</script></body>
+</html>
